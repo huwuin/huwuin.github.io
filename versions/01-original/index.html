@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101617">
+  <meta name="description" content="Diamond Mine: Group 19's research proposal for a transparent, two-phase film-ranking system.">
+  <title>Diamond Mine — EPAC · Group 19</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="notes.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="gem" viewBox="0 0 100 95"><path d="M20 12H80L98 38 50 92 2 38Z"/><path d="M2 38H98M20 12 32 38 50 92 68 38 80 12M32 38 50 12 68 38M20 12H80"/></symbol>
+  <symbol id="ore" viewBox="0 0 100 95"><path d="M20 10 68 3 94 30 83 75 49 92 8 61Z"/><path d="M20 10 38 40 8 61M38 40 68 3M38 40 83 75M38 40 94 30M38 40 49 92"/></symbol>
+  <symbol id="cart" viewBox="0 0 42 32"><path d="M4 6H38L32 23H10Z" fill="currentColor"/><path d="M1 4H41" stroke="currentColor" stroke-width="2"/><circle cx="13" cy="28" r="3" fill="currentColor"/><circle cx="29" cy="28" r="3" fill="currentColor"/></symbol>
+  <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M4 12H20M13 5 20 12 13 19"/></symbol>
+  <symbol id="arrow-left" viewBox="0 0 24 24"><path d="M20 12H4M11 5 4 12 11 19"/></symbol>
+  <symbol id="grid-icon" viewBox="0 0 24 24"><path d="M4 4H10V10H4ZM14 4H20V10H14ZM4 14H10V20H4ZM14 14H20V20H14Z"/></symbol>
+  <symbol id="fullscreen-icon" viewBox="0 0 24 24"><path d="M9 4H4V9M15 4H20V9M20 15V20H15M9 20H4V15"/></symbol>
+</defs></svg>
+
+<main id="stage" aria-label="Diamond Mine presentation">
+  <div class="strata" aria-hidden="true"></div>
+  <header class="deck-header">
+    <a class="wordmark" href="#slide-1" aria-label="Diamond Mine, first slide"><svg viewBox="0 0 100 95"><use href="#gem"/></svg><span>DIAMOND MINE</span></a>
+    <div class="header-context"><span id="section-label">Introduction</span><span class="divider"></span><span id="speaker-label">Speaker 1</span></div>
+    <span class="course-tag">EPAC / GROUP 19</span>
+  </header>
+
+  <svg id="junction-scene" viewBox="0 0 1420 330" aria-hidden="true">
+    <g class="track-bed"><path d="M0 30H475M0 95H475M0 160H475M0 225H475M0 290H475M850 160H1420"/></g>
+    <g class="track-core"><path d="M0 30H475M0 95H475M0 160H475M0 225H475M0 290H475M850 160H1420"/></g>
+    <g class="connectors track-bed"><path d="M475 30C665 30 650 160 850 160M475 95C665 95 650 160 850 160M475 160H850M475 225C665 225 650 160 850 160M475 290C665 290 650 160 850 160"/></g>
+    <g class="connectors track-core"><path d="M475 30C665 30 650 160 850 160M475 95C665 95 650 160 850 160M475 160H850M475 225C665 225 650 160 850 160M475 290C665 290 650 160 850 160"/></g>
+    <g class="end-stops"><path d="M475 16V44M475 81V109M475 146V174M475 211V239M475 276V304M850 146V174"/></g>
+    <circle class="junction-node" cx="850" cy="160" r="12"/>
+  </svg>
+
+  <div id="slides">
+    <section class="slide opening is-active" data-title="The question" data-speaker="1" data-section="Introduction" aria-labelledby="title-1">
+      <svg class="mine-scene" viewBox="0 0 1600 900" aria-hidden="true">
+        <defs><radialGradient id="mine-light"><stop stop-color="#bd9a6c" stop-opacity=".45"/><stop offset=".25" stop-color="#7d6248" stop-opacity=".14"/><stop offset="1" stop-color="#101617" stop-opacity="0"/></radialGradient><linearGradient id="cliff" x2="1" y2="1"><stop stop-color="#253131"/><stop offset="1" stop-color="#101617"/></linearGradient></defs>
+        <ellipse cx="1130" cy="455" rx="500" ry="430" fill="url(#mine-light)"/>
+        <g fill="none" stroke="#87958b" stroke-opacity=".13"><path d="M720 -20 900 84 858 230 1017 316 1042 477 997 628 860 730 851 920"/><path d="M825 -20 954 103 930 227 1059 328 1083 470 1047 599 971 710 998 920"/><path d="M952 -20 1045 110 1007 228 1100 353 1111 456"/><path d="M1610 23 1440 115 1494 255 1322 312 1286 454 1353 610 1463 693 1512 920"/><path d="M1555 -20 1370 98 1420 239 1270 299 1202 456 1288 619 1337 766 1377 920"/><path d="M1430 -20 1289 144 1330 237 1202 332 1160 455"/></g>
+        <path d="M1600 0H1475L1314 138 1354 244 1246 345 1215 465 1303 596 1328 743 1444 900H1600Z" fill="url(#cliff)" opacity=".7"/>
+        <path d="M738 900 1002 639 1098 479H1157L1291 647 1600 900" fill="#111718" opacity=".8"/>
+        <g stroke="#bc9271" fill="none"><path d="M819 900 1108 482M1375 900 1148 482" stroke-width="2"/><path d="M838 900 1112 482M1356 900 1145 482" stroke-width="2" opacity=".5"/><path d="M862 859H1331M917 787H1294M963 721H1258M1003 665H1228M1035 618H1203M1061 579H1183M1081 548H1168M1098 521H1157M1107 500H1150" stroke-width="2" opacity=".4"/></g>
+        <path d="M1114 480 1123 447 1137 447 1144 480" fill="#d7c5a1" opacity=".7"/>
+        <path d="M1129 445V413" stroke="#e8d7b3" opacity=".35"/>
+      </svg>
+      <div class="hero-copy">
+        <p class="eyebrow reveal">A RESEARCH PROPOSAL</p>
+        <h1 id="title-1" class="reveal">What is the<br>greatest movie<br><em>of all time?</em></h1>
+        <p class="hero-sub reveal">A journey through the evidence<br>behind cinematic greatness.</p>
+      </div>
+      <div class="opening-caption"><span class="caption-line"></span>THE SEARCH BEGINS BELOW THE SURFACE</div>
+    </section>
+
+    <section class="slide debate" data-title="Why is this so difficult?" data-speaker="1" data-section="Introduction" aria-labelledby="title-2">
+      <div class="debate-title"><p class="eyebrow">THE QUESTION BEHIND THE QUESTION</p><h2 id="title-2">One question.<br><em>Different values.</em></h2><p class="body-copy">A trivia question became a debate.<br>What do we mean by “greatest”?</p></div>
+      <svg class="branch-map" viewBox="0 0 780 570" role="img" aria-label="The question of greatness branches into audience affection, critical acclaim, awards, financial success, and cinematic influence.">
+        <g class="track-bed"><path d="M40 285H200C300 285 290 65 410 65H690M200 285C300 285 290 175 410 175H690M200 285H690M200 285C300 285 290 395 410 395H690M200 285C300 285 290 505 410 505H690"/></g>
+        <g class="track-core"><path d="M40 285H200C300 285 290 65 410 65H690M200 285C300 285 290 175 410 175H690M200 285H690M200 285C300 285 290 395 410 395H690M200 285C300 285 290 505 410 505H690"/></g>
+        <circle cx="200" cy="285" r="12" class="node"/>
+        <g class="branch-label"><text x="425" y="48">MOST LOVED?</text><text x="425" y="158">MOST ACCLAIMED?</text><text x="425" y="268">MOST AWARDED?</text><text x="425" y="378">MOST SUCCESSFUL?</text><text x="425" y="488">MOST INFLUENTIAL?</text></g>
+        <g class="terminal"><circle cx="690" cy="65" r="5"/><circle cx="690" cy="175" r="5"/><circle cx="690" cy="285" r="5"/><circle cx="690" cy="395" r="5"/><circle cx="690" cy="505" r="5"/></g>
+      </svg>
+      <div class="bottom-statement">The answer depends on <em>what we choose to measure.</em></div>
+    </section>
+
+    <section class="slide journey" data-title="Our research journey" data-speaker="1" data-section="Introduction" aria-labelledby="title-3">
+      <p class="eyebrow">OUR RESEARCH JOURNEY</p><h2 id="title-3">A clearer route<br>through film history</h2>
+      <p class="journey-thesis">We propose a transparent ranking<br>that combines multiple sources, then<br>refines the selection for diversity.</p>
+      <div class="route-map">
+        <svg viewBox="0 0 1420 240" aria-hidden="true"><path class="track-bed" d="M0 140H1420"/><path class="track-core" d="M0 140H1420"/><g class="route-stations"><circle cx="120" cy="140" r="14"/><circle cx="635" cy="140" r="14"/><circle cx="1140" cy="140" r="14"/></g><path d="M1140 140H1418" class="cyan-route"/></svg>
+        <div class="destination d1"><span>01 / EXPLORE</span><h3>Background<br>& research gaps</h3><p>Where existing routes lead</p></div>
+        <div class="destination d2"><span>02 / CONNECT</span><h3>Innovation</h3><p>Five dimensions, one framework</p></div>
+        <div class="destination d3"><span>03 / REFINE</span><h3>Description</h3><p>Two phases, a proposed Top 10</p></div>
+      </div>
+      <p class="proposal-title">“Obtaining a Top 10 Films of History Using a Two-Phase Adaptive Film Ranking Algorithm and Various Datasets.”</p>
+    </section>
+
+    <section class="slide sources" data-title="Existing approaches" data-speaker="2" data-section="Background & research gaps" aria-labelledby="title-4">
+      <p class="eyebrow">01 / EXPLORING THE EXISTING ROUTES</p><h2 id="title-4">Five perspectives on film</h2>
+      <p class="slide-deck">Each source offers evidence about a different kind of value.</p>
+      <div class="source-table" role="table" aria-label="Examples of film evidence and their scope">
+        <div class="table-head" role="row"><span role="columnheader">EVIDENCE SOURCE</span><span role="columnheader">WHAT IT CAPTURES</span><span role="columnheader">HOW TO READ IT</span></div>
+        <div class="source-row" role="row"><div role="cell"><span class="source-index">01</span><strong>IMDb</strong><sup>[1]</sup></div><div role="cell">Audience ratings</div><div role="cell">Opinions of participating users</div></div>
+        <div class="source-row" role="row"><div role="cell"><span class="source-index">02</span><strong>Rotten Tomatoes</strong><sup>[2]</sup></div><div role="cell">Professional critics</div><div role="cell">Share of positive critic reviews</div></div>
+        <div class="source-row" role="row"><div role="cell"><span class="source-index">03</span><strong>Academy Awards</strong><sup>[3]</sup></div><div role="cell">Awards & recognition</div><div role="cell">Institutional recognition</div></div>
+        <div class="source-row" role="row"><div role="cell"><span class="source-index">04</span><strong>The Numbers</strong><sup>[4]</sup></div><div role="cell">Economic performance</div><div role="cell">Box-office evidence</div></div>
+        <div class="source-row" role="row"><div role="cell"><span class="source-index">05</span><strong>BFI / Wasserman et al.</strong><sup>[5, 6]</sup></div><div role="cell">Cultural & cinematic influence</div><div role="cell">Expert polls / film citation networks</div></div>
+      </div>
+      <p class="citation">Selected examples, not exclusive categories. Rotten Tomatoes also publishes audience scores. Sources [1–6] in appendix.</p>
+    </section>
+
+    <section class="slide junction gap" data-title="Research gaps" data-speaker="2" data-section="Background & research gaps" aria-labelledby="title-5">
+      <p class="eyebrow">THE RESEARCH GAP</p><h2 id="title-5">Valuable perspectives.<br><em>An incomplete picture.</em></h2>
+      <div class="track-labels"><span>RATINGS</span><span>CRITICS</span><span>AWARDS</span><span>BOX OFFICE</span><span>INFLUENCE</span></div>
+      <div class="gap-callout"><span class="technical-label">THE INTEGRATION CHALLENGE</span><p>How should different kinds<br>of evidence contribute<br>to one explainable ranking?</p></div>
+      <div class="three-observations"><div><span>01</span><h3>Different constructs</h3><p>Success, acclaim and influence<br>are not interchangeable.</p></div><div><span>02</span><h3>Different outcomes</h3><p>The chosen criteria change<br>what a ranking rewards.</p></div><div><span>03</span><h3>Uneven coverage</h3><p>Who and what appears in the<br>data can shape the result.</p></div></div>
+      <p class="citation">Our gap concerns transparent integration and representation. Multi-criteria approaches already exist. Context: [1–6].</p>
+    </section>
+
+    <section class="slide junction connected" data-title="Connecting the gaps" data-speaker="2" data-section="Background & research gaps" aria-labelledby="title-6">
+      <p class="eyebrow">OUR PROPOSED RESPONSE</p><h2 id="title-6">Connecting the evidence</h2>
+      <p class="slide-deck">A shared framework makes the choices behind a ranking visible.</p>
+      <div class="track-labels"><span>RATINGS</span><span>CRITICS</span><span>AWARDS</span><span>BOX OFFICE</span><span>INFLUENCE</span></div>
+      <div class="gap-callout"><span class="technical-label">ONE CONNECTED FRAMEWORK</span><p>Broader evidence.<br>Explicit choices.<br><em>Reviewable results.</em></p></div>
+      <div class="three-observations"><div><span>01</span><h3>Integrate</h3><p>Bring complementary<br>evidence into one process.</p></div><div><span>02</span><h3>Explain</h3><p>Make weighting and<br>selection decisions explicit.</p></div><div><span>03</span><h3>Reconsider</h3><p>Examine representation<br>when refining the ranking.</p></div></div>
+      <p class="citation">Research objective: a more balanced, reproducible ranking. The integrated approach remains to be tested.</p>
+    </section>
+
+    <section class="slide system" data-title="The Diamond Mine system" data-speaker="3" data-section="Innovation" aria-labelledby="title-7">
+      <p class="eyebrow">02 / CONNECTING THE MINE</p><h2 id="title-7">Five inputs. One framework.</h2>
+      <p class="slide-deck">Our innovation is the proposed integration of complementary evidence.</p>
+      <svg class="system-map" viewBox="0 0 1420 450" role="img" aria-label="Five criteria travel along individual rails and merge into one shared evaluation route.">
+        <g class="system-labels"><text x="10" y="45">Public opinion</text><text x="10" y="125">Professional critics</text><text x="10" y="205">Awards & recognition</text><text x="10" y="285">Economic performance</text><text x="10" y="365">Cultural & cinematic influence</text></g>
+        <g class="track-bed"><path d="M440 50H650C790 50 770 210 940 210H1420M440 130H660C790 130 790 210 940 210M440 210H940M440 290H660C790 290 790 210 940 210M440 370H650C790 370 770 210 940 210"/></g>
+        <g class="track-core"><path d="M440 50H650C790 50 770 210 940 210H1420M440 130H660C790 130 790 210 940 210M440 210H940M440 290H660C790 290 790 210 940 210M440 370H650C790 370 770 210 940 210"/></g>
+        <g class="evidence-carts"><use href="#cart" x="535" y="16" width="42" height="32"/><use href="#cart" x="575" y="96" width="42" height="32"/><use href="#cart" x="520" y="176" width="42" height="32"/><use href="#cart" x="575" y="256" width="42" height="32"/><use href="#cart" x="535" y="336" width="42" height="32"/></g>
+        <circle cx="940" cy="210" r="14" class="node"/>
+        <text x="1040" y="155" class="output-label">SHARED EVALUATION</text><text x="1040" y="265" class="map-note">Weights to be defined</text>
+        <path d="M1095 315H1380M1095 305V325M1380 305V325" stroke="#82b6b0" fill="none"/><text x="1105" y="355" class="map-note">A proposal, not a result</text>
+      </svg>
+    </section>
+
+    <section class="slide phase phase-one" data-title="Phase 1: Bayesian Weighted Rating" data-speaker="3" data-section="Innovation" aria-labelledby="title-8">
+      <div class="phase-heading"><p class="eyebrow">PHASE 01 / ESTIMATE</p><h2 id="title-8">Bayesian<br><em>Weighted Rating</em></h2><p class="body-copy">Combine evidence to estimate<br>an initial rating for each film.</p></div>
+      <div class="bayesian-diagram">
+        <span class="diagram-overline">CONCEPTUAL LOGIC</span>
+        <div class="input-evidence"><span class="technical-label">PREPARED EVIDENCE</span><div class="ore-row"><svg><use href="#ore"/></svg><svg><use href="#ore"/></svg><svg><use href="#ore"/></svg></div><p>Multiple sources</p></div>
+        <div class="processing-chamber"><div class="chamber-rule"></div><span class="technical-label">BAYESIAN ESTIMATION</span><strong>Evidence<br><i>+</i> prior information</strong><span class="chamber-bottom">WEIGHTED CONTRIBUTIONS</span></div>
+        <div class="rating-output"><span class="technical-label">INITIAL RANKING</span><div class="ranking-lines"><i></i><i></i><i></i><i></i></div><p>Estimated ratings</p></div>
+        <div class="processing-rail" aria-hidden="true"></div>
+      </div>
+      <div class="phase-foot"><span class="phase-number">01</span><p>Bayesian principles can temper sparse evidence.<br><strong>The prior and weighting choices still require specification.</strong></p></div>
+      <p class="citation">Method proposed in the outline. IMDb’s published weighted-rating approach is context [1], not a disclosed Bayesian formula.</p>
+    </section>
+
+    <section class="slide phase phase-two" data-title="Phase 2: Diversity Optimization" data-speaker="3" data-section="Innovation" aria-labelledby="title-9">
+      <p class="eyebrow">PHASE 02 / REFINE</p><h2 id="title-9">Diversity Optimization</h2><p class="slide-deck">Reconsider the candidate ranking to improve representation.</p>
+      <div class="diversity-comparison">
+        <div class="candidate-group"><span class="technical-label">INITIAL CANDIDATES</span><div class="candidate-diamonds"><svg><use href="#ore"/></svg><svg><use href="#ore"/></svg><svg><use href="#ore"/></svg><svg><use href="#ore"/></svg><svg><use href="#ore"/></svg><svg><use href="#ore"/></svg></div><p>Ranking by estimated rating</p></div>
+        <div class="refinement-gate"><span>REFINEMENT</span><svg viewBox="0 0 220 150" aria-hidden="true"><path d="M0 75H220M50 15 90 75 50 135M125 15 165 75 125 135"/></svg><p>Apply diversity<br>considerations</p></div>
+        <div class="candidate-group refined"><span class="technical-label">RECONSIDERED SELECTION</span><div class="candidate-diamonds"><svg><use href="#gem"/></svg><svg><use href="#gem"/></svg><svg><use href="#gem"/></svg><svg><use href="#gem"/></svg><svg><use href="#gem"/></svg><svg><use href="#gem"/></svg></div><p>Balance rating and representation</p></div>
+      </div>
+      <div class="diversity-caption"><span class="phase-number">02</span><p>The aim is to mitigate certain biases.<br><strong>Diversity criteria and trade-offs remain to be defined.</strong></p></div>
+      <p class="citation">Illustrative shapes, not films or results. Methodological inspiration: Ziegler et al. (2005) [7].</p>
+    </section>
+
+    <section class="slide architecture" data-title="The complete process" data-speaker="3" data-section="Description" aria-labelledby="title-10">
+      <p class="eyebrow">03 / EXTRACTING & REFINING</p><h2 id="title-10">The complete process</h2><p class="slide-deck">A proposed route from diverse evidence to an explainable Top 10.</p>
+      <div class="pipeline">
+        <svg class="pipeline-rails" viewBox="0 0 1420 450" aria-hidden="true"><path class="track-bed" d="M70 160H1240Q1360 160 1360 265T1240 370H70"/><path class="track-core draw-route" d="M70 160H1240Q1360 160 1360 265T1240 370H70"/><path class="route-direction" d="M520 150 530 160 520 170M910 150 920 160 910 170M920 360 910 370 920 380M530 360 520 370 530 380"/></svg>
+        <div class="process-step step-1"><span>01 / COLLECT</span><h3>Data sources</h3><p>Five evidence dimensions</p><i></i></div>
+        <div class="process-step step-2"><span>02 / PREPARE</span><h3>Data preparation</h3><p>Comparable, usable inputs</p><i></i></div>
+        <div class="process-step step-3"><span>03 / ESTIMATE</span><h3>Bayesian<br>Weighted Rating</h3><i></i></div>
+        <div class="process-step step-4"><i></i><span>04 / ORDER</span><h3>Initial ranking</h3><p>Estimated film ratings</p></div>
+        <div class="process-step step-5"><i></i><span>05 / REFINE</span><h3>Diversity<br>Optimization</h3></div>
+        <div class="process-step step-6"><i></i><span>06 / PROPOSE</span><h3>Proposed Top 10</h3><p>Selection with an explanation</p></div>
+      </div>
+      <p class="citation">System architecture from the Group 19 research proposal. No implementation results or final ranking are claimed.</p>
+    </section>
+
+    <section class="slide maturity" data-title="Applications and maturity" data-speaker="3" data-section="Description" aria-labelledby="title-11">
+      <p class="eyebrow">APPLICATIONS & MATURITY</p><h2 id="title-11">A concept ready to be tested</h2>
+      <div class="perspectives"><div><span class="technical-label">FOR DEVELOPERS</span><h3>A reproducible procedure</h3><p>Document the method and adapt it<br>to similar ranking problems.</p></div><div><span class="technical-label">FOR USERS</span><h3>An explainable entry point</h3><p>Explore film history through a Top 10<br>with visible selection criteria.</p></div></div>
+      <div class="maturity-bottom"><div class="limitations"><span class="technical-label">OPEN DECISIONS & LIMITATIONS</span><ul><li>Release-year range is not yet specified.</li><li>Data coverage and access may vary.</li><li>Weights and diversity criteria need validation.</li></ul></div><div class="trl-route"><div class="trl-current"><span>CURRENT</span><strong>TRL <em>2</em></strong><p>Technology concept<br>formulated</p></div><div class="trl-connection" aria-hidden="true"><span></span></div><div class="trl-next"><span>NEXT OBJECTIVE</span><strong>TRL <em>3</em></strong><p>Experimental<br>proof of concept</p></div><p class="trl-note">Test the integrated system on real film datasets.</p></div></div>
+      <p class="citation">Established methods do not validate this integration. Data access/licensing: [4, 8]. TRL definitions: European Commission [9].</p>
+    </section>
+
+    <section class="slide recap" data-title="Bringing everything together" data-speaker="4" data-section="Conclusion" aria-labelledby="title-12">
+      <p class="eyebrow">THE ROUTE WE PROPOSE</p><h2 id="title-12">A more connected view<br>of cinematic greatness</h2>
+      <div class="recap-lines"><svg viewBox="0 0 1420 350" aria-hidden="true"><path class="track-bed" d="M50 30V300Q50 330 80 330H1420"/><path class="track-core" d="M50 30V300Q50 330 80 330H1420"/><g class="route-stations"><circle cx="50" cy="45" r="10"/><circle cx="50" cy="150" r="10"/><circle cx="50" cy="255" r="10"/></g></svg><div><span>01 / BACKGROUND</span><h3>Existing sources reveal different aspects of film.</h3></div><div><span>02 / INNOVATION</span><h3>A unified framework connects five criteria.</h3></div><div><span>03 / DESCRIPTION</span><h3>Two phases aim for a more balanced, transparent ranking.</h3></div></div>
+      <div class="recap-goal"><svg aria-hidden="true"><use href="#gem"/></svg><p>The objective<br><strong>A proposed Top 10 we can explain.</strong></p></div>
+    </section>
+
+    <section class="slide closing" data-title="The final diamond" data-speaker="4" data-section="Conclusion" aria-labelledby="title-13">
+      <div class="closing-copy"><p class="eyebrow">THE QUESTION RETURNS</p><p class="return-question">What is the greatest movie of all time?</p><h2 id="title-13">What is the greatest<br>movie of all time<br><em>for you?</em></h2><div class="qa-label"><span></span>QUESTIONS & DISCUSSION</div></div>
+      <svg class="final-gem" viewBox="0 0 600 620" role="img" aria-label="A refined faceted diamond, representing the research objective rather than a winning film.">
+        <defs><linearGradient id="facet-one" x2="1" y2="1"><stop stop-color="#b9d7cc" stop-opacity=".68"/><stop offset="1" stop-color="#517975" stop-opacity=".12"/></linearGradient><linearGradient id="facet-two" x2="0" y2="1"><stop stop-color="#c4d6b9" stop-opacity=".14"/><stop offset="1" stop-color="#bde2d5" stop-opacity=".5"/></linearGradient></defs>
+        <g class="gem-construction" fill="none" stroke="#8dbab0" stroke-opacity=".13"><circle cx="310" cy="280" r="240"/><path d="M0 280H600M310 0V620M65 105H555M65 455H555M135 0V620M485 0V620"/><path d="M65 105 310 560 555 105"/></g>
+        <g stroke="#abd0c2" stroke-width="1.3"><path d="M135 105H485L555 235 310 535 65 235Z" fill="#233736"/><path d="M135 105 205 235 65 235Z" fill="url(#facet-one)"/><path d="M135 105H310L205 235Z" fill="#405754"/><path d="M310 105 415 235H205Z" fill="url(#facet-one)"/><path d="M310 105H485L415 235Z" fill="#6e8d81" fill-opacity=".55"/><path d="M485 105 555 235H415Z" fill="url(#facet-two)"/><path d="M65 235H205L310 535Z" fill="url(#facet-two)"/><path d="M205 235H415L310 535Z" fill="url(#facet-one)"/><path d="M415 235H555L310 535Z" fill="#314d49"/></g>
+        <path d="M110 105H70M135 80V40M510 105H550M485 80V40M310 560V600" stroke="#bc9872" opacity=".6"/>
+      </svg>
+      <p class="closing-credit">DIAMOND MINE<span>GROUP 19 / EPAC</span></p>
+    </section>
+
+    <section class="slide references" data-title="References: evidence sources" data-speaker="Appendix" data-section="References" aria-labelledby="title-14">
+      <p class="eyebrow">REFERENCE LIBRARY / 01</p><h2 id="title-14">Evidence sources</h2>
+      <div class="reference-columns"><div>
+        <article><span>[1]</span><h3>IMDb (2026)</h3><p>Ratings FAQ.</p><a href="https://help.imdb.com/article/imdb/track-movies-tv/faq-for-imdb-ratings/G67Y87TFYYP6TWAV" target="_blank" rel="noopener noreferrer">help.imdb.com ↗</a></article>
+        <article><span>[2]</span><h3>Rotten Tomatoes (n.d.)</h3><p>About Rotten Tomatoes.</p><a href="https://www.rottentomatoes.com/about" target="_blank" rel="noopener noreferrer">rottentomatoes.com/about ↗</a></article>
+        <article><span>[3]</span><h3>Academy of Motion Picture Arts<br>and Sciences (n.d.)</h3><p>The Official Academy Awards Database.</p><a href="https://awardsdatabase.oscars.org/" target="_blank" rel="noopener noreferrer">awardsdatabase.oscars.org ↗</a></article>
+      </div><div>
+        <article><span>[4]</span><h3>The Numbers (n.d.)</h3><p>Data Services.</p><a href="https://www.the-numbers.com/data-services" target="_blank" rel="noopener noreferrer">the-numbers.com/data-services ↗</a></article>
+        <article><span>[5]</span><h3>British Film Institute (2022)</h3><p>Revealed: The results of the 2022 Sight and Sound<br>Greatest Films of All Time poll.</p><a href="https://www.bfi.org.uk/news/revealed-results-2022-sight-sound-greatest-films-all-time-poll" target="_blank" rel="noopener noreferrer">bfi.org.uk / Sight and Sound ↗</a></article>
+        <article><span>[6]</span><h3>Wasserman, M., Zeng, X. H. T.,<br>& Amaral, L. A. N. (2015)</h3><p>Cross-evaluation of metrics to estimate the significance<br>of creative works. <i>PNAS, 112</i>(5), 1281–1286.</p><a href="https://doi.org/10.1073/pnas.1412198112" target="_blank" rel="noopener noreferrer">doi:10.1073/pnas.1412198112 ↗</a></article>
+      </div></div><p class="citation">References follow the sources cited in the Group 19 Speech Preparation Outline. Press R to return to the presentation.</p>
+    </section>
+
+    <section class="slide references" data-title="References: methods and readiness" data-speaker="Appendix" data-section="References" aria-labelledby="title-15">
+      <p class="eyebrow">REFERENCE LIBRARY / 02</p><h2 id="title-15">Methods & readiness</h2>
+      <div class="reference-columns methods-refs"><div>
+        <article><span>[7]</span><h3>Ziegler, C.-N., McNee, S. M.,<br>Konstan, J. A., & Lausen, G. (2005)</h3><p>Improving recommendation lists through topic diversification.<br><i>Proceedings of the 14th International Conference<br>on World Wide Web</i>, 22–32.</p><a href="https://doi.org/10.1145/1060745.1060754" target="_blank" rel="noopener noreferrer">doi:10.1145/1060745.1060754 ↗</a></article>
+        <article><span>[8]</span><h3>IMDb (n.d.)</h3><p>IMDb Non-Commercial Datasets.</p><a href="https://data.imdb.com/non-commercial-datasets/" target="_blank" rel="noopener noreferrer">data.imdb.com/non-commercial-datasets ↗</a></article>
+      </div><div>
+        <article><span>[9]</span><h3>European Commission (n.d.)</h3><p>Technology Readiness Levels.<br>European Innovation Council programme guidance.</p><a href="https://eic.ec.europa.eu/programme-finder-13_en" target="_blank" rel="noopener noreferrer">eic.ec.europa.eu / programme guidance ↗</a></article>
+        <div class="method-note"><span class="technical-label">HOW THESE SOURCES ARE USED</span><p>Diversification research informs the proposal.<br>It does not validate the integrated film-ranking system.</p><p>Reproducibility depends on data availability,<br>licensing and documented design decisions.</p></div>
+      </div></div><p class="citation">Core source: Group 19 Speech Preparation Outline. Communication guidance: CosasBasicas.txt. Press R to return.</p>
+    </section>
+  </div>
+
+  <footer class="deck-footer">
+    <div class="journey-progress"><div id="progress-track" aria-label="Slide navigation">
+      <span class="rail-line" aria-hidden="true"></span>
+      <button class="station chapter-station" data-go="0" aria-label="Slide 1: Introduction"></button><button class="station" data-go="1" aria-label="Slide 2: Why is this so difficult?"></button><button class="station" data-go="2" aria-label="Slide 3: Our research journey"></button><button class="station chapter-station" data-go="3" aria-label="Slide 4: Background and research gaps"></button><button class="station" data-go="4" aria-label="Slide 5: Research gaps"></button><button class="station" data-go="5" aria-label="Slide 6: Connecting the gaps"></button><button class="station chapter-station" data-go="6" aria-label="Slide 7: Innovation and description"></button><button class="station" data-go="7" aria-label="Slide 8: Bayesian Weighted Rating"></button><button class="station" data-go="8" aria-label="Slide 9: Diversity Optimization"></button><button class="station" data-go="9" aria-label="Slide 10: Complete process"></button><button class="station" data-go="10" aria-label="Slide 11: Applications and maturity"></button><button class="station chapter-station" data-go="11" aria-label="Slide 12: Conclusion"></button><button class="station" data-go="12" aria-label="Slide 13: The final diamond"></button>
+      <svg id="progress-cart" viewBox="0 0 42 32" aria-hidden="true"><use href="#cart"/></svg>
+    </div><div class="progress-labels" aria-hidden="true"><span>INTRODUCTION</span><span>BACKGROUND</span><span>INNOVATION & DESCRIPTION</span><span>CONCLUSION</span></div></div>
+    <div class="deck-controls"><button id="overview-toggle" title="Slide overview (O)" aria-label="Open slide overview"><svg><use href="#grid-icon"/></svg></button><button id="notes-toggle" title="Speaker notes (N)" aria-label="Open speaker notes">N</button><button id="references-toggle" title="References (R)" aria-label="Toggle references">R</button><button id="fullscreen-toggle" title="Fullscreen (F)" aria-label="Toggle fullscreen"><svg><use href="#fullscreen-icon"/></svg></button><button id="help-toggle" title="Keyboard shortcuts (?)" aria-label="Show keyboard shortcuts">?</button><span class="control-divider"></span><button id="prev-slide" title="Previous slide (←)" aria-label="Previous slide"><svg><use href="#arrow-left"/></svg></button><span id="slide-count">01 / 13</span><button id="next-slide" title="Next slide (→)" aria-label="Next slide"><svg><use href="#arrow-right"/></svg></button></div>
+  </footer>
+</main>
+<dialog id="deck-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><h2 id="dialog-title">Slide overview</h2><button id="dialog-close" aria-label="Close dialog">Close <span>Esc</span></button></div><div id="dialog-content"></div></dialog>
+<p id="live-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+<noscript><p class="no-script">Enable JavaScript to navigate this presentation.</p></noscript>
+</body>
+</html>

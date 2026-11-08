@@ -1,0 +1,297 @@
+PAGE 1
+English for 
+Professional and 
+Academic 
+Communication
+Innovation and Description
+
+PAGE 2
+Practice 1: Assessing the Introduction section
+2
+● Read your Introduction section.
+● Evaluate the content using the rubric (available in Moodle)
+IMPORTANT: 
+This content may
+appear in the exam. 
+
+
+PAGE 3
+3
+
+
+PAGE 4
+4
+Innovation 
+Description
+List of References
+
+
+PAGE 5
+INNOVATION
+
+PAGE 6
+Innovation - example 1
+Innovation 
+(what)Gaps covered Innovation (how)
+
+PAGE 7
+Innovation
+Innovation 
+(what)
+Gaps covered
+Innovation 
+(how)
+Briefly mention what you propose to do. If it relies on 
+previous work by yourself or others, also add the 
+corresponding references. 
+
+
+PAGE 8
+Gaps covered Innovation (what) Innovation (how)
+Example 2 
+
+
+PAGE 9
+Gaps covered
+Innovation 
+(what)
+Innovation 
+(how)
+Example 2 
+
+
+PAGE 10
+10
+Innovation section - Structure
+
+PAGE 11
+DESCRIPTION
+
+PAGE 12
+The how 
+ 
+Understanding the Description 
+section
+E.g. Proposal template from the EU H2020 research 
+and innovation program 
+ 
+https://ec.europa.eu/research/participants/data/ref/h2020/call_ptef/pt/2018-2020/h2020-call-pt-ria-ia-2018-20_en.pdf
+
+
+PAGE 13
+Understanding the Description 
+section
+Why is it credible?
+Support with real evidence that what you propose is achievable
+Include assumptions and limitations of your own solution 
+Example
+Contrary to other initiatives (...), the Lynx portal will bring together legal data sources 
+from various jurisdictions in Europe in multiple languages, whenever available from 
+the responsible publishing authorities (Official State Gazettes), (...). As for the time of 
+writing this proposal, 15 European countries (out of the 27 EU official State 
+Members) publish their legislation as open data. (see eurlex.eu/summary).
+What is it that you are going to develop? 
+Explain architecture and technologies involved
+You may need to identify (and reference!) methods, technologies, 
+techniques you may (re)use 
+
+
+PAGE 14
+Architecture
+Example 3 
+Functioning and 
+use
+Assumptions & 
+Limitations
+Competitive 
+advantage
+
+PAGE 15
+15
+Technical components
+
+PAGE 16
+Architecture
+Example 3 
+Functioning and 
+use
+Assumptions & 
+Limitations
+Competitive 
+advantage
+
+PAGE 17
+Architectural 
+design
+Example 3.1 
+Functioning and 
+use
+Assumptions & 
+Limitations
+Competitive 
+advantage
+
+
+PAGE 18
+Architecture
+Example 3.1 
+Functioning and 
+use
+Assumptions & 
+Limitations
+Competitive 
+advantage
+In the Description section you need to provide evidence 
+to support your research: MAKE IT CREDIBLE!!
+
+PAGE 19
+Tips to create a System Architecture Diagram
+Tip 1: Start with paper… or a white board
+Tip 2: Include your most important components
+Tip 3: Show data dependencies and data ﬂows:
+- Identify Input, intermediate and output data
+Tip 4: Group relevant components:
+- Identify modules and submodules
+- Identify external services (vs. own developed 
+services)
+Tip 5: Use diagrams.net
+(see examples in the next slides)
+ 19
+
+PAGE 20
+System Architecture Diagram (I)
+20
+Tip 1: Start with paper… or a white board
+Source: https://adamcogan.com/wp-content/uploads/2022/09/rewards-architecture-diagram.png
+
+PAGE 21
+System Architecture Diagram (II)
+21
+Tip 2: Include your most important components
+Tip 3: Show data dependencies and data ﬂows
+Source: https://adamcogan.com/wp-content/uploads/2022/09/rewards-architecture-diagram.png
+
+PAGE 22
+System Architecture Diagram (III)
+22
+Tip 4: 
+Group relevant 
+components
+Tip 5: 
+Use diagrams.net
+
+
+PAGE 23
+Architecture - Example 1
+ Paper: AI-Based Recognition of Fruit and Vegetable Spoilage: Towards Household Food Waste Reduction
+23
+
+
+PAGE 24
+Architecture - Example 2
+ Paper: Equitable AI: Exploring the role of gender in poverty estimation models using geospatial data
+24
+
+
+PAGE 25
+Dataset description - Example 1 
+ Paper: AI-Based Recognition of Fruit and Vegetable Spoilage: Towards Household Food Waste Reduction
+25
+
+
+PAGE 26
+Dataset description - Example 2
+ Paper: Equitable AI: Exploring the role of gender in poverty estimation models using geospatial data
+26
+
+
+PAGE 27
+Practice 2: Diagram Description
+27
+● Solve Practice 2 - read and complete the description of the 
+diagram below (in handout)
+
+
+PAGE 28
+Practice 3: Diagram Creation 
+28
+● Create your own System Architecture Diagram with 
+Draw.io (https://app.diagrams.net/)
+● Visualize the components:
+○ Data (Inputs and outputs)
+○ Tasks
+○ Self-implemented algorithms
+○ External services reused
+
+
+PAGE 29
+29
+Description section - Structure
+
+PAGE 30
+30
+Description section - Structure
+
+
+PAGE 31
+31
+Example of Assumptions related to C1:
+● Companies financial data are available, audited and reported in a comparable 
+format.
+● Historical default records exist and are labelled reliably 
+● Analysts and business teams will trust and use model-based ratings if clear 
+explanations are provided.
+Example of Limitations related to C1:
+● The study will focus only on corporate clients (SMEs and mid-sized 
+companies).
+● Data will be limited to companies from a small set of sectors and countries. 
+● The system will support analysts’ decisions but will not automatically approve or 
+reject credit applications.
+Example of Challenges related to C1:
+● Dealing with class imbalance, since defaults are rare events compared to 
+non-defaulting companies.
+● Integrating heterogeneous data sources with different update frequencies and 
+formats.
+● Keeping ratings accurate when economic conditions change, which requires 
+monitoring model drift and recalibrating the model.
+C1
+
+PAGE 32
+32
+Example of Assumptions related to C2:
+● Public data sources provide data that is accurate and representative enough to 
+measure popularity and impact.
+● The selected criteria are enough to capture what makes an artist “top tier”.
+● Metrics from different platforms and time periods can be normalised to a 
+common scale so that they can be compared fairly.
+Example of Limitations related to C2:
+● The study will focus on only one domain (e.g., music artists), excluding movies 
+and books.
+● The proposal will present a high-level design and a theoretical approach; full 
+implementation of the system is outside the scope.
+● Data will mainly come from Western, English-language platforms and charts, so 
+the ranking may not reflect global cultural diversity.
+Example of Challenges related to C2:
+● Comparing artists from different eras fairly, since older artists have little digital 
+or streaming data and newer artists benefit from social media exposure.
+● Turning subjective concepts such as “cultural impact” or “innovation” into 
+objective, measurable indicators.
+● Defining and justifying the weights of each criterion without introducing 
+personal bias into the final ranking.
+C2
+
+PAGE 33
+33
+Practice: An approach to AW
+
+PAGE 34
+How to write an RP 101
+34
+https://www.youtube.com/watch?v=oUiKwFNzKDM
+
+
+PAGE 35
+Share your Innovation and Description
+35
+Elena’s Group: https://short.upm.es/mlzzx 
+Patricia’s Group: https://short.upm.es/6yqkg

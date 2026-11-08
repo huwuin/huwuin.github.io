@@ -1,0 +1,419 @@
+PAGE 1
+English for 
+Professional and 
+Academic 
+Communication
+Oral presentations - part 3
+
+PAGE 2
+Agenda
+1. Choosing a graph
+2. Describing graphs
+3. Visual Aids 
+
+
+PAGE 3
+3
+
+
+PAGE 4
+Charts & graphs are useful ways to visualise data
+Trend
+Trend + 
+Comparison
+Trend + 
+Groups Size
+
+PAGE 5
+Pathway to implement charts & graphs  
+5
+1. Understand your data and message
+2. Match the purpose to the right chart type
+3. Apply best practices & avoid pitfalls
+4. Structure the presentation
+
+PAGE 6
+Phase 1: Understand Your Data and 
+Message
+6
+▶ Step 1: Categorize the Data
+▶ Quantitative
+▶ Qualitative/Categorical
+▶ Specialized types (Temporal, Spatial, 
+Hierarchical)
+▶ Step 2: Define the Purpose.
+▶ Are we comparing values between products?
+▶ Are we tracking changes over time?
+▶ Are we examining relationships between 
+variables?
+
+
+PAGE 7
+Phase 2: Match the Purpose to the Right 
+Chart Type
+7
+
+
+PAGE 8
+Compare values within and between groups using a 
+bar chart, column chart, or bullet chart
+8
+• What is the population in European countries?
+• What are my sales numbers in those countries?
+• Who are the top salespersons in my company?
+
+
+PAGE 9
+Show the composition of data utilizing a pie 
+chart, donut chart, or treemap 
+9
+• Allocation of women and men among your customers
+• Approved and denied applications for a school
+• Share of 1 region’s sales on the whole company sales
+
+
+PAGE 10
+Display change over time with a line chart, area 
+chart, or column chart
+10
+● Sales trend over the past year
+● Number of webpage visitors trend
+● Amount of support tickets coming to your help desk day 
+by day
+
+
+PAGE 11
+Explain the relationship between metrics with a 
+scatter plot, bubble chart, or combo chart
+11
+● How does the campaign spend relate to its revenue 
+across many different campaigns?
+● What is the relationship between the number of orders 
+and total revenue by the product category?
+● How many courses each student started and finished?
+
+
+PAGE 12
+Plot geographical data on the map
+12
+● Distribution of customers across states
+● Number of people living in the cities
+● Revenue per region
+
+
+PAGE 13
+Phase 3: Apply Best Practices & Avoid 
+Pitfalls
+13
+▶ The "Golden Rule" of Simplicity:  Focus on one idea 
+per chart and remove "data noise" like unnecessary 3D 
+effects, shadows, or heavy gridlines.
+▶ Ensure Accuracy: Start the Y-axis at zero (especially 
+for bar and area charts) to avoid exaggerating small 
+differences.
+▶ Consistency: Use the same fonts, colours, and scales 
+across similar charts to help the audience build "visual 
+habits“.
+▶ Audience Fit: Match the complexity of the chart to the 
+reader’s expertise.
+
+PAGE 14
+Phase 4: Structure the presentation
+14
+▶ Introduce the graph. State the title, topic, data 
+source, and time frame.
+▶ Point Out Important Information: Highlight the main 
+trends, patterns, or outliers using descriptive verbs 
+(e.g., "rose sharply," "remained stable").
+▶ Share Conclusions:  Explain what the data actually 
+means for the future or what decisions should be made 
+based on these insights.
+
+
+PAGE 15
+Introduce your graph
+15
+▶ Ground the audience before showing numbers:
+▶ “Let me show you this graph…”,
+▶  “Let’s turn to this diagram...”, 
+▶ “To illustrate my point”, 
+▶ “Let’s look at some charts”, 
+▶ “To illustrate my point..”, 
+▶ “Let’s look at some charts…”.
+
+
+PAGE 16
+Identify features
+16
+▶ 
+▶ Explain the architecture so they know how to read it.
+▶ “The vertical axis shows revenue, and the segment 
+represents…”·
+
+
+PAGE 17
+Point out important information
+17
+▶ Highlight the main trends, patterns, or outliers using 
+descriptive verbs (e.g., "rose sharply," "remained 
+stable").
+▶ If you look at this solid lane, you will notice sharp 
+increase...”
+
+
+PAGE 18
+Share conlcusions
+18
+▶ Translate the data into business impact.
+▶ Based on this, we can conclude…...”
+
+
+PAGE 19
+Verbs to Define Trends 
+19
+
+
+PAGE 20
+20
+ From Powell, M. (2011). Dynamic Presentations, p. 22
+
+
+PAGE 21
+21
+ From Powell, M. (2011). Dynamic Presentations, p. 22
+Top tips
+1. Signposting. “Let's turn 
+to the graph”
+2. Introduce 
+subject.  What 
+does the visual 
+show? 
+3. Explain the 
+axes, key, and 
+source. 
+4. Describe the type of data 
+visualisation (e.g. trend, 
+comparison between groups, 
+size of groups).
+5. Do not read 
+everything. 
+Select & 
+present!
+
+PAGE 22
+Useful expressions
+22
+“Let's look at the current distribution of the market, as 
+you can see…”
+“I'm going to show you now the most recent ﬁgures 
+available…”
+“My next slide concerns the method by which…”
+“The ﬁrst line of ﬁgures is the most revealing…”
+“Notice how the increase has had an eﬀect on the…”
+“What is important here is the way that…”
+In other words, this number has a direct eﬀect on… 
+“Or to look at it in another way, every time you…”
+
+PAGE 23
+Don’t forget to provide the reference:
+23
+
+
+PAGE 24
+Or use free images
+24
+
+
+PAGE 25
+Pexel
+25
+
+
+PAGE 26
+26
+The 2026 AI Index Report | Stanford HAI
+
+PAGE 27
+27
+
+
+PAGE 28
+28
+
+
+PAGE 29
+29
+
+
+PAGE 30
+30
+
+
+PAGE 31
+31
+
+
+PAGE 32
+32
+
+
+PAGE 33
+33
+
+
+PAGE 34
+34
+
+
+PAGE 35
+35
+
+
+PAGE 36
+36
+
+
+PAGE 37
+37
+
+
+PAGE 38
+38
+
+
+PAGE 39
+39
+
+
+PAGE 40
+40
+Practice 1: Share your graph
+Select a graph or a figure that you would like to use in your 
+final OP and present it in class. 
+Remember: 
+● Gategorise the data 
+● Define one purpose at a time 
+● Match the type of graph to the data
+● Introduce the graph 
+● Point out the important information 
+● Share conclusions 
+
+
+PAGE 41
+What are the most 
+common Powerpoint 
+mistakes?
+
+
+PAGE 42
+https://www.youtube.com/watch?v=MjcO2ExtHso&t=27s
+
+
+PAGE 43
+43
+
+
+PAGE 44
+44
+
+
+PAGE 45
+What is wrong with these 
+slides?
+
+
+PAGE 46
+46
+Too much text
+
+
+PAGE 47
+Too much animation
+47
+
+
+PAGE 48
+48
+
+
+PAGE 49
+49
+Low contrast - poor readability
+
+
+PAGE 50
+50
+Too minimalistic
+
+
+PAGE 51
+51
+Poor text-background separation
+
+
+PAGE 52
+52
+Too small font
+
+
+PAGE 53
+53
+Too many colours
+
+
+PAGE 54
+54
+Too many images and poor font readability
+ 
+
+
+PAGE 55
+55
+Complicated charts and graphs 
+
+
+PAGE 56
+56
+Slides that copy your script 
+
+
+PAGE 57
+57
+Too many ideas 
+
+
+PAGE 58
+AI tools to create presentations 
+
+
+PAGE 59
+AI tools to create presentations
+
+
+PAGE 60
+Examples of PPTs
+
+
+PAGE 61
+Oral presentations
+Length of presentations:
+❏ 3 members groups: 9 mins
+You will be interrupted if you exceed the time 
+❏ After the presentation:  
+1. Answer questions (presenters)
+2. Ask questions (audience)
+ 
+
+
+PAGE 62
+
+
+PAGE 63
+
+
+PAGE 64
+Practice 2:  Audio-Visuals Presentation
+● Prepare the audiovisual aids of your presentation (you can 
+choose any part of your OP . 
+● Present it in class.
+ 

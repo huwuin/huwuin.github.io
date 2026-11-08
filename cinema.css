@@ -1,0 +1,172 @@
+/* A 1.10-second slate transition, contained entirely within the 16:9 stage. */
+#cinema-clapper {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  color: var(--paper, #edece2);
+  contain: layout paint;
+}
+
+#cinema-clapper.is-active { visibility: visible; }
+#cinema-clapper .clapper-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #0b1011;
+}
+
+#cinema-clapper .clapper-top-half,
+#cinema-clapper .clapper-bottom-half {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  will-change: transform;
+}
+
+#cinema-clapper .clapper-top-half {
+  z-index: 2;
+  top: 0;
+  height: 300px;
+  transform-origin: 0 100%;
+  transform: rotate(-12deg);
+  border-bottom: 7px solid var(--copper, #bd9472);
+  background: #101617;
+}
+
+#cinema-clapper .clapper-stripes {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(132deg,
+    #d4cbb8 0 105px, #131b1c 105px 210px);
+}
+
+#cinema-clapper .clapper-hinge {
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 54px;
+  height: 120px;
+  border-right: 1px solid #c4a284;
+  background: #786352;
+  display: grid;
+  place-items: center;
+}
+
+#cinema-clapper .clapper-hinge::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid #c5ad95;
+  border-radius: 50%;
+  background: #2b2c27;
+}
+
+#cinema-clapper .clapper-bottom-half {
+  top: 300px;
+  bottom: 0;
+  background: #101617;
+  border-bottom: 1px solid #4a514a;
+  transform: translateY(0);
+}
+
+#cinema-clapper .clapper-bottom-stripes {
+  height: 48px;
+  background: repeating-linear-gradient(48deg,
+    #131b1c 0 105px, #d4cbb8 105px 210px);
+  border-bottom: 1px solid #7a7767;
+}
+
+#cinema-clapper .clapper-slate {
+  padding: 49px 98px 42px;
+}
+
+#cinema-clapper .clapper-production {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 50px;
+  padding-bottom: 37px;
+  border-bottom: 1px solid #51594f;
+}
+
+#cinema-clapper .clapper-production strong {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 70px;
+  font-weight: 400;
+  letter-spacing: 10px;
+}
+
+#cinema-clapper .clapper-production span {
+  font-size: 21px;
+  letter-spacing: 5px;
+  color: var(--copper, #bd9472);
+}
+
+#cinema-clapper .clapper-details {
+  display: grid;
+  grid-template-columns: 1.35fr 1.35fr 1fr;
+  margin-top: 34px;
+}
+
+#cinema-clapper .clapper-details > div {
+  min-height: 205px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 48px;
+  border-left: 1px solid #51594f;
+}
+
+#cinema-clapper .clapper-details > div:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+#cinema-clapper .clapper-label {
+  color: var(--muted, #adb7b1);
+  font-size: 17px;
+  letter-spacing: 4px;
+  margin-bottom: 22px;
+}
+
+#cinema-clapper .clapper-value {
+  font-family: "Georgia Pro Light", Georgia, serif;
+  font-size: 85px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+#cinema-clapper #clapper-scene-val {
+  font-variant-numeric: tabular-nums;
+  color: var(--copper, #bd9472);
+}
+
+#cinema-clapper.is-active .clapper-top-half {
+  transition: transform 180ms cubic-bezier(.45, 0, .75, 1);
+}
+
+#cinema-clapper.is-snapped .clapper-top-half { transform: rotate(0); }
+#cinema-clapper.is-opening .clapper-backdrop {
+  opacity: 0;
+  transition: opacity 260ms ease-out;
+}
+
+#cinema-clapper.is-opening .clapper-top-half {
+  transform: translateY(-102%);
+  transition: transform 380ms cubic-bezier(.5, 0, .2, 1);
+}
+
+#cinema-clapper.is-opening .clapper-bottom-half {
+  transform: translateY(102%);
+  transition: transform 380ms cubic-bezier(.5, 0, .2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #cinema-clapper { display: none !important; }
+}
+
+@media print {
+  #cinema-clapper { display: none !important; }
+}

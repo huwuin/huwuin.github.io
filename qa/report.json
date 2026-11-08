@@ -1,0 +1,1151 @@
+{
+  "checks": [
+    {
+      "label": "13 main slides and 3 appendix pages",
+      "pass": true
+    },
+    {
+      "label": "One active slide initially",
+      "pass": true
+    },
+    {
+      "label": "Right Arrow advances",
+      "pass": true
+    },
+    {
+      "label": "Space advances",
+      "pass": true
+    },
+    {
+      "label": "Left Arrow reverses",
+      "pass": true
+    },
+    {
+      "label": "End selects last main slide",
+      "pass": true
+    },
+    {
+      "label": "Home selects first slide",
+      "pass": true
+    },
+    {
+      "label": "Previous clamps at first slide",
+      "pass": true
+    },
+    {
+      "label": "Rapid forward input preserves one active slide",
+      "pass": true
+    },
+    {
+      "label": "Rapid backward input preserves one active slide",
+      "pass": true
+    },
+    {
+      "label": "R opens references",
+      "pass": true
+    },
+    {
+      "label": "References include second page",
+      "pass": true
+    },
+    {
+      "label": "Appendix includes dataset plan",
+      "pass": true
+    },
+    {
+      "label": "Next clamps at last appendix",
+      "pass": true
+    },
+    {
+      "label": "R returns to original main slide",
+      "pass": true
+    },
+    {
+      "label": "D opens the dataset plan",
+      "pass": true
+    },
+    {
+      "label": "D returns from dataset plan",
+      "pass": true
+    },
+    {
+      "label": "O opens overview",
+      "pass": true
+    },
+    {
+      "label": "Overview lists all slides",
+      "pass": true
+    },
+    {
+      "label": "Overview selection navigates and closes",
+      "pass": true
+    },
+    {
+      "label": "N opens presenter notes",
+      "pass": true
+    },
+    {
+      "label": "Slide has substantive presenter notes",
+      "pass": true
+    },
+    {
+      "label": "Escape closes overlay",
+      "pass": true
+    },
+    {
+      "label": "? opens keyboard help",
+      "pass": true
+    },
+    {
+      "label": "Mouse next control works",
+      "pass": true
+    },
+    {
+      "label": "Arrow navigation works after clicking a control",
+      "pass": true
+    },
+    {
+      "label": "Mouse previous control works",
+      "pass": true
+    },
+    {
+      "label": "Railway stations navigate",
+      "pass": true
+    },
+    {
+      "label": "Reference link receives keyboard focus",
+      "pass": true
+    },
+    {
+      "label": "Space leaves focused link alone",
+      "pass": true
+    },
+    {
+      "label": "Inactive slides inert and hidden from assistive technology",
+      "pass": true
+    },
+    {
+      "label": "Slide changes announced politely",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 1: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 1: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 1: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 2: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 2: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 2: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 3: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 3: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 3: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 4: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 4: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 4: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 5: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 5: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 5: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 6: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 6: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 6: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 7: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 7: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 7: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 8: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 8: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 8: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 9: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 9: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 9: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 10: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 10: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 10: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 11: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 11: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 11: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 12: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 12: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 12: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 13: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 13: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 13: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 14: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 14: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 14: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 15: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 15: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 15: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 16: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 16: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 16: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 1: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 1: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 1: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 2: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 2: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 2: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 3: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 3: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 3: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 4: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 4: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 4: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 5: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 5: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 5: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 6: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 6: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 6: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 7: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 7: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 7: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 8: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 8: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 8: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 9: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 9: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 9: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 10: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 10: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 10: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 11: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 11: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 11: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 12: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 12: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 12: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 13: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 13: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 13: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 14: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 14: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 14: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 15: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 15: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 15: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 16: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 16: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 16: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "Reduced-motion mode navigates correctly",
+      "pass": true
+    },
+    {
+      "label": "Reduced-motion mode removes long transitions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "Reduced-motion mode removes active decorative animation",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "4:3 viewport letterboxes without clipping",
+      "pass": true,
+      "detail": {
+        "x": 0,
+        "y": 96,
+        "width": 1024,
+        "height": 576
+      }
+    },
+    {
+      "label": "Clapper does not obscure initial load",
+      "pass": true
+    },
+    {
+      "label": "Opening navigation triggers clapper and updates slide",
+      "pass": true
+    },
+    {
+      "label": "Clapper snaps after 180ms",
+      "pass": true
+    },
+    {
+      "label": "Clapper holds closed through 700ms",
+      "pass": true
+    },
+    {
+      "label": "Clapper begins opening after 720ms",
+      "pass": true
+    },
+    {
+      "label": "Clapper clears after 1100ms",
+      "pass": true
+    },
+    {
+      "label": "Backward return to opening triggers clapper",
+      "pass": true
+    },
+    {
+      "label": "Rapid navigation cancels stale clapper timers",
+      "pass": true
+    },
+    {
+      "label": "C replays clapper without navigating",
+      "pass": true
+    },
+    {
+      "label": "Escape cancels clapper without navigating",
+      "pass": true
+    },
+    {
+      "label": "Opening notes cancels clapper",
+      "pass": true
+    },
+    {
+      "label": "Changing to reduced motion cancels clapper",
+      "pass": true
+    },
+    {
+      "label": "Reduced motion skips clapper replay",
+      "pass": true
+    },
+    {
+      "label": "No console or JavaScript errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "Deck makes no network requests",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "externalRequests": [],
+  "layouts": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 1,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 2,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 3,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 4,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 5,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 6,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 7,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 8,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 9,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 10,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 11,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 12,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 13,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 14,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 15,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "slide": 16,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 1,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 2,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 3,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 4,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 5,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 6,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 7,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 8,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 9,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 10,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 11,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 12,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 13,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 14,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 15,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 16,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    }
+  ]
+}

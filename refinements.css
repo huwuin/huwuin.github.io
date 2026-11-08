@@ -1,0 +1,204 @@
+/* Projection edition: open compositions, brighter type, and purposeful rail motion. */
+:root {
+  --paper: #f5f2e7;
+  --muted: #c2ccc4;
+  --copper: #d1aa83;
+  --copper-dim: #8b7158;
+  --mineral: #abd5c7;
+  --line: #4a5650;
+}
+#stage { background: #101617; }
+.strata { opacity: .065; }
+.slide { padding-top: 137px; }
+h2 { font-size: 71px; }
+.eyebrow { font-size: 17px; letter-spacing: 2.7px; margin-bottom: 25px; }
+.slide-deck { font-size: 29px; line-height: 1.45; margin-top: 23px; }
+.body-copy { font-size: 30px; }
+.technical-label { font-size: 18px; letter-spacing: 1.6px; }
+.heading-citation { font: 18px "Segoe UI", Arial, sans-serif; color: var(--copper); vertical-align: super; letter-spacing: 0; }
+.citation { font-size: 18px; }
+.deck-header { border-bottom-color: #798a7d28; }
+.course-tag { font-size: 13px; }
+.header-context { font-size: 15px; }
+.hero-copy { top: 180px; }
+.hero-sub { font-size: 28px; }
+.opening-caption { display: none; }
+.mine-scene { opacity: .92; }
+.debate-title { top: 182px; }
+.debate-title .body-copy { font-size: 30px; }
+.branch-label { font-size: 22px; letter-spacing: 1.6px; }
+.bottom-statement { font-size: 31px; bottom: 158px; }
+.journey-thesis { font-size: 29px; left: 845px; top: 194px; }
+.destination>span { font-size: 17px; }
+.destination h3 { font-size: 34px; }
+.destination p { font-size: 25px; top: 174px; }
+.d3 { left: 1085px; }
+.d3 p { font-size: 24px; }
+.proposal-title { font-size: 22px; bottom: 145px; max-width: 1375px; line-height: 1.5; }
+
+/* Read the five evidence sources as five rows, with no competing side notes. */
+.source-table { margin-top: 38px; }
+.table-head,.source-row { grid-template-columns: 46% 54%; }
+.table-head { font-size: 17px; padding-bottom: 17px; }
+.source-row { min-height: 84px; font-size: 29px; }
+.source-row strong { font-size: 29px; }
+.source-row>div:last-child { font-size: 29px; color: var(--paper); }
+.source-row sup { font-size: 16px; }
+.source-index { font-size: 25px; margin-right: 25px; }
+.source-row:before { background: var(--copper); opacity: .65; }
+
+/* Integration and representation follow the speaker's two-part argument. */
+.junction h2 { font-size: 64px; }
+.connected h2 { font-size: 71px; }
+.connected .slide-deck { font-size: 29px; margin-top: 22px; }
+.junction .track-labels { font-size: 18px; letter-spacing: 1.5px; top: 329px; }
+.track-labels span { padding: 5px 12px; }
+.gap-callout { left: 1000px; top: 347px; padding-right: 5px; }
+.gap-callout p { font-size: 34px; line-height: 1.4; }
+.gap-callout .technical-label { font-size: 16px; letter-spacing: 1.3px; }
+.gap-questions { position: absolute; left: 90px; right: 90px; top: 663px; display: grid; grid-template-columns: 1fr 1fr; gap: 110px; }
+.gap-questions>div { position: relative; padding-left: 45px; }
+.gap-questions>div>span { position: absolute; left: 0; top: 4px; color: var(--copper); font-size: 19px; }
+.gap-questions h3 { font-size: 30px; margin-bottom: 12px; }
+.gap-questions p { font-size: 28px; line-height: 1.4; color: var(--muted); }
+.three-observations { top: 663px; gap: 55px; }
+.three-observations h3 { font-size: 30px; }
+.three-observations p { font-size: 26px; line-height: 1.4; }
+.three-observations>div>span { font-size: 19px; }
+
+/* Preserve the reference edition's five cart colors, confined to the evidence. */
+.system-map { top: 334px; }
+.system-labels { font-size: 29px; }
+.output-label { font-size: 23px; letter-spacing: 1.6px; }
+.map-note { font-size: 25px; }
+.cart-gold { color: #f4c469; }
+.cart-red { color: #d44d4d; }
+.cart-amber { color: #c49a75; }
+.cart-green { color: #47cf94; }
+.cart-cyan { color: #4da6ff; }
+.system.is-active .evidence-carts { animation-duration: 800ms; }
+
+/* A readable equation, rather than an extra dashboard panel. */
+.phase-heading { top: 139px; }
+.phase-heading h2 { font-size: 69px; }
+.phase-heading .body-copy { font-size: 29px; line-height: 1.45; margin-top: 26px; }
+.rating-formula { position: absolute; left: 90px; top: 455px; width: 600px; }
+.formula-context { font-size: 23px; line-height: 1.4; color: var(--muted); }
+.formula-context sup { font-size: 16px; color: var(--copper); }
+.formula-equation { display: flex; align-items: center; gap: 22px; font-family: Georgia,serif; font-size: 55px; margin-top: 22px; }
+.formula-w { color: var(--mineral); font-style: italic; }
+.formula-fraction { display: inline-flex; flex-direction: column; align-items: stretch; text-align: center; font-size: 43px; line-height: 1.35; }
+.formula-fraction>span:first-child { border-bottom: 1px solid var(--copper); padding: 0 16px 8px; }
+.formula-fraction>span:last-child { padding-top: 7px; }
+.formula-definitions { display: grid; grid-template-columns: 1fr 1fr; row-gap: 16px; column-gap: 23px; margin: 28px 0 0; }
+.formula-definitions>div { display: flex; gap: 12px; align-items: baseline; }
+.formula-definitions dt { flex: 0 0 25px; color: var(--copper); font: italic 29px Georgia,serif; }
+.formula-definitions dd { margin: 0; font-size: 24px; color: var(--muted); }
+.bayesian-diagram { top: 225px; }
+.processing-chamber { height: 310px; }
+.processing-chamber .technical-label { font-size: 16px; }
+.processing-chamber strong { font-size: 29px; line-height: 1.9; }
+.input-evidence .technical-label,.rating-output .technical-label { font-size: 17px; }
+.input-evidence p,.rating-output p { font-size: 24px; }
+.input-evidence,.rating-output { top: 140px; }
+.bayesian-takeaway { position: absolute; left: 970px; top: 654px; max-width: 540px; font-size: 30px; line-height: 1.5; color: var(--muted); border-left: 2px solid var(--copper); padding-left: 25px; }
+.diversity-comparison { top: 350px; }
+.candidate-group .technical-label { font-size: 18px; }
+.candidate-group p { font-size: 26px; }
+.refinement-gate>span { font-size: 16px; }
+.refinement-gate p { font-size: 23px; }
+.diversity-caption { bottom: 150px; padding-top: 30px; }
+.diversity-caption p { font-size: 29px; line-height: 1.55; }
+
+/* The continuous line remains the architecture's organizing structure. */
+.pipeline { top: 326px; }
+.process-step>span { font-size: 16px; letter-spacing: 1.5px; }
+.process-step h3 { font-size: 32px; margin-top: 14px; }
+.process-step p { font-size: 24px; line-height: 1.4; }
+.step-1>span { color: var(--paper); }
+.step-1 i { border-color: var(--paper); }
+.architecture-legend { position: absolute; left: 90px; bottom: 118px; display: flex; gap: 45px; align-items: center; font-size: 21px; color: var(--muted); }
+.architecture-legend>span { display: flex; align-items: center; gap: 12px; }
+.architecture-legend i { width: 12px; height: 12px; border: 2px solid var(--copper); border-radius: 50%; }
+.architecture-legend i.external-node { border-color: var(--paper); }
+
+/* Separate assumptions, challenges and limits without three boxed panels. */
+.perspectives { top: 290px; }
+.perspectives h3 { font-size: 34px; }
+.perspectives p { font-size: 28px; line-height: 1.45; }
+.maturity-bottom { top: 528px; grid-template-columns: 1fr 1.1fr; gap: 65px; }
+.scope-lines>div { margin-bottom: 22px; }
+.scope-lines>div>span { display: block; font-size: 16px; letter-spacing: 1.5px; color: var(--copper); margin-bottom: 8px; }
+.scope-lines p { font-size: 26px; color: var(--muted); line-height: 1.35; }
+.trl-route { padding-left: 30px; grid-template-columns: 245px 70px 255px; gap: 18px; }
+.trl-route>div>span { font-size: 16px; letter-spacing: 1.5px; }
+.trl-route strong { font-size: 39px; }
+.trl-route em { font-size: 80px; }
+.trl-route p { font-size: 25px; }
+.trl-route .trl-note { font-size: 26px!important; margin-top: 25px; }
+.trl-note sup { font-size: 16px; color: var(--copper); }
+.recap-lines { top: 375px; }
+.recap-lines h3 { font-size: 32px; }
+.recap-lines span { font-size: 17px; }
+.recap h2 { font-size: 74px; }
+
+/* The closing rail leads to the same light that opened the journey. */
+#stage[data-slide="12"],#stage[data-slide="13"] { background: #1a2623; }
+.closing-copy { top: 180px; }
+.closing h2 { font-size: 84px; }
+.closing h2 em { font-size: 113px; }
+.return-question { font-size: 27px; }
+.qa-label { font-size: 17px; }
+.final-gem { z-index: 1; top: 120px; }
+.exit-rail { position: absolute; left: 920px; top: 654px; width: 580px; height: 205px; fill: none; stroke: var(--copper); stroke-width: 1.1px; opacity: .38; z-index: 0; }
+
+/* Motion follows evidence along the rails and settles while the speaker talks. */
+.track-energy { fill: none; stroke: #f2cda2; stroke-width: 2.4px; stroke-dasharray: 28 190; stroke-dashoffset: 0; opacity: 0; pointer-events: none; }
+.is-active .track-energy { animation: rail-travel 2s linear 2, rail-settle .5s ease 3.5s forwards; opacity: .72; }
+#stage[data-direction="backward"] .is-active .track-energy { animation-direction: reverse,normal; }
+#stage[data-slide="5"] #junction-scene .track-energy,#stage[data-slide="6"] #junction-scene .track-energy { animation: rail-travel 2s linear 2, rail-settle .5s ease 3.5s forwards; opacity: .6; }
+#junction-scene .connection-flow { visibility: hidden; }
+#stage[data-slide="6"] #junction-scene .connection-flow { visibility: visible; }
+@keyframes rail-travel { to { stroke-dashoffset: -436; } }
+@keyframes rail-settle { to { opacity: 0; } }
+
+/* Keep navigation present but let the audience concentrate on the slide. */
+.deck-footer { bottom: 21px; height: 68px; }
+.journey-progress { height: 48px; }
+.progress-labels { display: none; }
+.deck-controls { gap: 6px; padding-bottom: 4px; }
+.utility-controls { display: flex; align-items: center; gap: 5px; opacity: 0; pointer-events: none; transition: opacity .18s; }
+.deck-footer:hover .utility-controls,.deck-footer:focus-within .utility-controls { opacity: 1; pointer-events: auto; }
+.deck-controls #prev-slide,.deck-controls #next-slide { width: 40px; opacity: .65; }
+.deck-controls #prev-slide:hover,.deck-controls #next-slide:hover { opacity: 1; }
+.control-divider { opacity: .5; }
+#slide-count { font-size: 16px; }
+.station.chapter-station:after { border-color: var(--copper); }
+.deck-controls button { color: var(--muted); }
+
+/* Supporting information is available without competing with the spoken story. */
+.reference-columns { top: 285px; }
+.reference-columns h3 { font-size: 25px; }
+.reference-columns p { font-size: 22px; }
+.reference-columns a { font-size: 18px; }
+.reference-columns article { margin-bottom: 27px; }
+.method-note { margin-top: 37px; }
+.method-note p { font-size: 24px; }
+.production-credit { position: absolute; left: 90px; bottom: 139px; }
+.production-credit .technical-label { font-size: 15px; }
+.production-credit p { font-size: 20px; line-height: 1.5; color: var(--muted); margin-top: 10px; }
+.dataset-table { position: absolute; left: 90px; right: 90px; top: 318px; }
+.dataset-table>div { display: grid; grid-template-columns: 1.45fr 1.8fr 1fr; gap: 15px; align-items: center; border-top: 1px solid var(--line); padding: 16px 0; min-height: 67px; font-size: 24px; }
+.dataset-table .dataset-head { min-height: 35px; border: 0; padding: 0 0 18px; font-size: 16px; color: var(--copper); letter-spacing: 1.5px; }
+.dataset-table .dataset-head>span:last-child { font-size: 16px; color: var(--copper); }
+.dataset-table strong { font-weight: 500; font-size: 25px; }
+.dataset-table sup { font-size: 15px; color: var(--copper); margin-left: 5px; }
+.dataset-table>div>span:last-child { color: var(--muted); font-size: 23px; }
+.dataset-scope { position: absolute; left: 90px; bottom: 118px; color: var(--muted); font-size: 25px; line-height: 1.4; }
+.presenter-notes { font-size: 20px; line-height: 1.6; }
+@media (prefers-reduced-motion:reduce) {
+  .track-energy,.is-active .track-energy,#stage[data-slide="5"] #junction-scene .track-energy,#stage[data-slide="6"] #junction-scene .track-energy { animation: none!important; opacity: .35; stroke-dasharray: 5 35; }
+}
+@media print {
+  .utility-controls,.exit-rail { display: none; }
+}
