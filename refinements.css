@@ -7,7 +7,7 @@
   --mineral: #abd5c7;
   --line: #4a5650;
 }
-#stage { background: #101617; }
+#stage { background: var(--ink); }
 .strata { opacity: .065; }
 .slide { padding-top: 137px; }
 h2 { font-size: 71px; }
@@ -24,11 +24,12 @@ h2 { font-size: 71px; }
 .hero-sub { font-size: 28px; }
 .opening-caption { display: none; }
 .mine-scene { opacity: .92; }
-.debate-title { top: 182px; }
+.debate-title { top: 255px; }
 .debate-title .body-copy { font-size: 30px; }
 .branch-label { font-size: 22px; letter-spacing: 1.6px; }
 .bottom-statement { font-size: 31px; bottom: 158px; }
 .journey-thesis { font-size: 29px; left: 845px; top: 194px; }
+.journey .route-map { top: 450px; }
 .destination>span { font-size: 17px; }
 .destination h3 { font-size: 34px; }
 .destination p { font-size: 25px; top: 174px; }
@@ -37,7 +38,7 @@ h2 { font-size: 71px; }
 .proposal-title { font-size: 22px; bottom: 145px; max-width: 1375px; line-height: 1.5; }
 
 /* Read the five evidence sources as five rows, with no competing side notes. */
-.source-table { margin-top: 38px; }
+.source-table { margin-top: 50px; }
 .table-head,.source-row { grid-template-columns: 46% 54%; }
 .table-head { font-size: 17px; padding-bottom: 17px; }
 .source-row { min-height: 84px; font-size: 29px; }
@@ -53,8 +54,8 @@ h2 { font-size: 71px; }
 .connected .slide-deck { font-size: 29px; margin-top: 22px; }
 .junction .track-labels { font-size: 18px; letter-spacing: 1.5px; top: 329px; }
 .track-labels span { padding: 5px 12px; }
-.gap-callout { left: 1000px; top: 347px; padding-right: 5px; }
-.gap-callout p { font-size: 34px; line-height: 1.4; }
+.gap-callout { left: 1000px; top: 384px; padding-right: 5px; }
+.gap-callout p { font-size: 34px; line-height: 1.4; margin-top: 0; }
 .gap-callout .technical-label { font-size: 16px; letter-spacing: 1.3px; }
 .gap-questions { position: absolute; left: 90px; right: 90px; top: 663px; display: grid; grid-template-columns: 1fr 1fr; gap: 110px; }
 .gap-questions>div { position: relative; padding-left: 45px; }
@@ -67,7 +68,7 @@ h2 { font-size: 71px; }
 .three-observations>div>span { font-size: 19px; }
 
 /* Preserve the reference edition's five cart colors, confined to the evidence. */
-.system-map { top: 334px; }
+.system-map { top: 310px; }
 .system-labels { font-size: 29px; }
 .output-label { font-size: 23px; letter-spacing: 1.6px; }
 .map-note { font-size: 25px; }
@@ -82,7 +83,7 @@ h2 { font-size: 71px; }
 .phase-heading { top: 139px; }
 .phase-heading h2 { font-size: 69px; }
 .phase-heading .body-copy { font-size: 29px; line-height: 1.45; margin-top: 26px; }
-.rating-formula { position: absolute; left: 90px; top: 455px; width: 600px; }
+.rating-formula { position: absolute; left: 90px; top: 425px; width: 600px; }
 .formula-context { font-size: 23px; line-height: 1.4; color: var(--muted); }
 .formula-context sup { font-size: 16px; color: var(--copper); }
 .formula-equation { display: flex; align-items: center; gap: 22px; font-family: Georgia,serif; font-size: 55px; margin-top: 22px; }
@@ -102,7 +103,9 @@ h2 { font-size: 71px; }
 .input-evidence p,.rating-output p { font-size: 24px; }
 .input-evidence,.rating-output { top: 140px; }
 .bayesian-takeaway { position: absolute; left: 970px; top: 654px; max-width: 540px; font-size: 30px; line-height: 1.5; color: var(--muted); border-left: 2px solid var(--copper); padding-left: 25px; }
-.diversity-comparison { top: 350px; }
+.diversity-comparison { top: 380px; }
+.candidate-diamonds { gap: 9px; margin-top: 34px; margin-bottom: 34px; }
+.candidate-diamonds svg { width: 75px; height: 91px; }
 .candidate-group .technical-label { font-size: 18px; }
 .candidate-group p { font-size: 26px; }
 .refinement-gate>span { font-size: 16px; }
@@ -111,7 +114,7 @@ h2 { font-size: 71px; }
 .diversity-caption p { font-size: 29px; line-height: 1.55; }
 
 /* The continuous line remains the architecture's organizing structure. */
-.pipeline { top: 326px; }
+.pipeline { top: 314px; }
 .process-step>span { font-size: 16px; letter-spacing: 1.5px; }
 .process-step h3 { font-size: 32px; margin-top: 14px; }
 .process-step p { font-size: 24px; line-height: 1.4; }
@@ -143,8 +146,7 @@ h2 { font-size: 71px; }
 .recap h2 { font-size: 74px; }
 
 /* The closing rail leads to the same light that opened the journey. */
-#stage[data-slide="12"],#stage[data-slide="13"] { background: #1a2623; }
-.closing-copy { top: 180px; }
+.closing-copy { top: 260px; }
 .closing h2 { font-size: 84px; }
 .closing h2 em { font-size: 113px; }
 .return-question { font-size: 27px; }
@@ -152,15 +154,25 @@ h2 { font-size: 71px; }
 .final-gem { z-index: 1; top: 120px; }
 .exit-rail { position: absolute; left: 920px; top: 654px; width: 580px; height: 205px; fill: none; stroke: var(--copper); stroke-width: 1.1px; opacity: .38; z-index: 0; }
 
-/* Motion follows evidence along the rails and settles while the speaker talks. */
+/* A final title card, with both routes meeting at one small diamond. */
+.thank-you-copy { position: absolute; left: 90px; right: 90px; top: 282px; text-align: center; }
+.thank-you-copy h2 { font-size: 154px; line-height: 1.07; letter-spacing: -6px; }
+.thank-you-copy h2 em { color: var(--mineral); }
+.thank-you-copy>p { margin-top: 40px; color: var(--muted); font-size: 17px; letter-spacing: 3px; }
+.end-rails { position: absolute; left: 90px; top: 520px; width: 1420px; height: 300px; }
+.end-diamond { fill: var(--ink); stroke: var(--mineral); stroke-width: 2px; }
+.end-credit { position: absolute; left: 90px; bottom: 130px; color: var(--muted); font-size: 15px; letter-spacing: 2.5px; }
+.end-credit span { margin: 0 12px; color: var(--copper); }
+.thank-you.is-active .thank-you-copy { animation: reveal-in .6s var(--ease) both; }
+
+/* Evidence keeps moving along the rails while its slide is visible. */
 .track-energy { fill: none; stroke: #f2cda2; stroke-width: 2.4px; stroke-dasharray: 28 190; stroke-dashoffset: 0; opacity: 0; pointer-events: none; }
-.is-active .track-energy { animation: rail-travel 2s linear 2, rail-settle .5s ease 3.5s forwards; opacity: .72; }
-#stage[data-direction="backward"] .is-active .track-energy { animation-direction: reverse,normal; }
-#stage[data-slide="5"] #junction-scene .track-energy,#stage[data-slide="6"] #junction-scene .track-energy { animation: rail-travel 2s linear 2, rail-settle .5s ease 3.5s forwards; opacity: .6; }
+.is-active .track-energy { animation: rail-travel 2s linear infinite; opacity: .72; }
+#stage[data-direction="backward"] .is-active .track-energy { animation-direction: reverse; }
+#stage[data-slide="5"] #junction-scene .track-energy,#stage[data-slide="6"] #junction-scene .track-energy { animation: rail-travel 2s linear infinite; opacity: .6; }
 #junction-scene .connection-flow { visibility: hidden; }
 #stage[data-slide="6"] #junction-scene .connection-flow { visibility: visible; }
 @keyframes rail-travel { to { stroke-dashoffset: -436; } }
-@keyframes rail-settle { to { opacity: 0; } }
 
 /* Keep navigation present but let the audience concentrate on the slide. */
 .deck-footer { bottom: 21px; height: 68px; }

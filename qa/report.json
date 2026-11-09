@@ -1,7 +1,7 @@
 {
   "checks": [
     {
-      "label": "13 main slides and 3 appendix pages",
+      "label": "14 main slides and 3 appendix pages",
       "pass": true
     },
     {
@@ -337,6 +337,19 @@
       "detail": []
     },
     {
+      "label": "1920×1080 slide 17: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 17: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1920×1080 slide 17: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
       "label": "1280×720 slide 1: stage fits",
       "pass": true
     },
@@ -541,6 +554,19 @@
     },
     {
       "label": "1280×720 slide 16: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 17: stage fits",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 17: no page overflow",
+      "pass": true
+    },
+    {
+      "label": "1280×720 slide 17: text stays on canvas",
       "pass": true,
       "detail": []
     },
@@ -892,6 +918,22 @@
       "outside": []
     },
     {
+      "width": 1920,
+      "height": 1080,
+      "slide": 17,
+      "stage": {
+        "x": -0.00006103515625,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "scroll": {
+        "width": 1920,
+        "height": 1080
+      },
+      "outside": []
+    },
+    {
       "width": 1280,
       "height": 720,
       "slide": 1,
@@ -1135,6 +1177,22 @@
       "width": 1280,
       "height": 720,
       "slide": 16,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "slide": 17,
       "stage": {
         "x": 0,
         "y": 0,

@@ -6,6 +6,8 @@ const { pathToFileURL } = require('node:url');
 
 const root = path.resolve(__dirname, '..');
 const output = path.join(__dirname, 'screenshots');
+const MAIN_SLIDES = 14;
+const TOTAL_SLIDES = MAIN_SLIDES + 3;
 fs.mkdirSync(output, { recursive: true });
 const report = { checks: [], consoleErrors: [], pageErrors: [], externalRequests: [], layouts: [] };
 const check = (condition, label, detail) => {
@@ -29,27 +31,27 @@ const check = (condition, label, detail) => {
 
     await page.goto(url);
     await page.waitForFunction(() => document.getElementById('stage')?.dataset.slide === '1');
-    check(await page.locator('#slides > .slide').count() === 16, '13 main slides and 3 appendix pages');
+    check(await page.locator('#slides > .slide').count() === TOTAL_SLIDES, '14 main slides and 3 appendix pages');
     check((await state()).active === 1, 'One active slide initially');
     await key('ArrowRight'); check((await state()).slide === 2, 'Right Arrow advances');
     await key('Space'); check((await state()).slide === 3, 'Space advances');
     await key('ArrowLeft'); check((await state()).slide === 2, 'Left Arrow reverses');
-    await key('End'); check((await state()).slide === 13, 'End selects last main slide');
+    await key('End'); check((await state()).slide === MAIN_SLIDES, 'End selects last main slide');
     await key('Home'); check((await state()).slide === 1, 'Home selects first slide');
     await key('ArrowLeft'); check((await state()).slide === 1, 'Previous clamps at first slide');
     await page.evaluate(() => { for (let i = 0; i < 11; i++) document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true })); });
     check((await state()).slide === 12 && (await state()).active === 1, 'Rapid forward input preserves one active slide');
     await page.evaluate(() => { for (let i = 0; i < 8; i++) document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft', bubbles: true })); });
     check((await state()).slide === 4 && (await state()).active === 1, 'Rapid backward input preserves one active slide');
-    await key('r'); check((await state()).slide === 14, 'R opens references');
-    await key('ArrowRight'); check((await state()).slide === 15, 'References include second page');
-    await key('ArrowRight'); check((await state()).slide === 16, 'Appendix includes dataset plan');
-    await key('ArrowRight'); check((await state()).slide === 16, 'Next clamps at last appendix');
+    await key('r'); check((await state()).slide === MAIN_SLIDES + 1, 'R opens references');
+    await key('ArrowRight'); check((await state()).slide === MAIN_SLIDES + 2, 'References include second page');
+    await key('ArrowRight'); check((await state()).slide === TOTAL_SLIDES, 'Appendix includes dataset plan');
+    await key('ArrowRight'); check((await state()).slide === TOTAL_SLIDES, 'Next clamps at last appendix');
     await key('r'); check((await state()).slide === 4, 'R returns to original main slide');
-    await key('d'); check((await state()).slide === 16, 'D opens the dataset plan');
+    await key('d'); check((await state()).slide === TOTAL_SLIDES, 'D opens the dataset plan');
     await key('d'); check((await state()).slide === 4, 'D returns from dataset plan');
     await key('o'); check((await state()).dialog, 'O opens overview');
-    check(await page.locator('.overview-item').count() === 16, 'Overview lists all slides');
+    check(await page.locator('.overview-item').count() === TOTAL_SLIDES, 'Overview lists all slides');
     await page.locator('.overview-item').nth(8).click();
     check((await state()).slide === 9 && !(await state()).dialog, 'Overview selection navigates and closes');
     await key('n'); check((await state()).dialog, 'N opens presenter notes');
@@ -62,14 +64,14 @@ const check = (condition, label, detail) => {
     await page.keyboard.press('ArrowRight');
     await page.locator('#prev-slide').click(); check((await state()).slide === 9, 'Mouse previous control works');
     await page.locator('.station[data-go="0"]').click(); check((await state()).slide === 1, 'Railway stations navigate');
-    await go(14);
+    await go(MAIN_SLIDES + 1);
     await page.waitForTimeout(700);
     const link = page.locator('.slide.is-active a').first();
     if (await link.count()) {
       await link.focus();
       check(await link.evaluate((element) => element === document.activeElement), 'Reference link receives keyboard focus');
       await page.keyboard.press('Space');
-      check((await state()).slide === 14, 'Space leaves focused link alone');
+      check((await state()).slide === MAIN_SLIDES + 1, 'Space leaves focused link alone');
     } else check(false, 'References have usable hyperlinks');
     check(await page.evaluate(() => [...document.querySelectorAll('.slide:not(.is-active)')].every((slide) => slide.inert && slide.getAttribute('aria-hidden') === 'true')), 'Inactive slides inert and hidden from assistive technology');
     check(await page.locator('#live-status').getAttribute('aria-live') === 'polite', 'Slide changes announced politely');
@@ -77,7 +79,7 @@ const check = (condition, label, detail) => {
     await defocus();
     for (const [width, height] of [[1920,1080], [1280,720]]) {
       await page.setViewportSize({ width, height });
-      for (let slide = 1; slide <= 16; slide++) {
+      for (let slide = 1; slide <= TOTAL_SLIDES; slide++) {
         await go(slide); await page.waitForTimeout(1250);
         const layout = await page.evaluate(() => {
           const stage = document.getElementById('stage').getBoundingClientRect();
@@ -149,7 +151,7 @@ const check = (condition, label, detail) => {
     check(report.consoleErrors.length === 0 && report.pageErrors.length === 0, 'No console or JavaScript errors', [...report.consoleErrors, ...report.pageErrors]);
     check(report.externalRequests.length === 0, 'Deck makes no network requests', report.externalRequests);
     fs.writeFileSync(path.join(__dirname, 'report.json'), JSON.stringify(report, null, 2));
-    console.log(JSON.stringify({ passed: report.checks.filter((entry) => entry.pass).length, failed: report.checks.filter((entry) => !entry.pass), screenshots: 32, report: path.join(__dirname, 'report.json') }, null, 2));
+    console.log(JSON.stringify({ passed: report.checks.filter((entry) => entry.pass).length, failed: report.checks.filter((entry) => !entry.pass), screenshots: TOTAL_SLIDES * 2, report: path.join(__dirname, 'report.json') }, null, 2));
     if (report.checks.some((entry) => !entry.pass)) process.exitCode = 1;
   } finally { await browser.close(); }
 })().catch((error) => { console.error(error); process.exitCode = 1; });

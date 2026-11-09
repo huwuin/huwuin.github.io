@@ -1,6 +1,6 @@
 # Diamond Mine
 
-An offline HTML presentation for English for Professional and Academic Communication, Group 19. Thirteen main slides follow the four-speaker research outline, followed by two reference pages and a dataset-plan appendix.
+An offline HTML presentation for English for Professional and Academic Communication, Group 19. Fourteen main slides follow the four-speaker research outline and end with a thank-you screen. Two reference pages and a dataset-plan appendix follow.
 
 ## Open the presentation
 
@@ -15,7 +15,7 @@ The fixed 1600 × 900 stage scales proportionally to the screen. Other aspect ra
 | Right arrow / Space | Next slide |
 | Left arrow | Previous slide |
 | Home | First slide |
-| End | Last main slide, the closing question |
+| End | Thank-you screen |
 | O | Slide overview |
 | N | Speaker notes for the current slide |
 | R | Open references / return to the previous main slide |
@@ -27,7 +27,7 @@ The fixed 1600 × 900 stage scales proportionally to the screen. Other aspect ra
 
 The footer provides mouse controls and clickable railway stations. Move the pointer to the footer to reveal its additional controls, or reach them with Tab. A horizontal swipe also advances or reverses the deck on touch devices. Space retains native activation when a button or link has keyboard focus. Slides do not advance automatically.
 
-The cinema slate lasts 1.10 seconds. It plays on the opening transition and when returning to the first slide. Navigation or Escape cancels it immediately. It has no sound or camera flash. Rail highlights move briefly, then settle while the speaker talks. Reduced-motion preferences disable these animations.
+The cinema slate lasts 1.10 seconds. It plays on the opening transition and when returning to the first slide. Navigation or Escape cancels it immediately. Rail highlights loop continuously while the slide is visible. All slides use the same obsidian background. Reduced-motion preferences keep the rail highlights visible without animation.
 
 Speaker notes open in an overlay **on the same screen**. Use them during rehearsal, or read notes.js separately before presenting. They are not a private second-screen presenter view. The assessment rubric expects the presenters to speak without reading from notes or devices. Rehearse the argument and the handoffs, then present to the audience.
 
@@ -38,9 +38,9 @@ Speaker notes open in an overlay **on the same screen**. Use them during rehears
 | 1 | 1–3 | Opening question, motivation and research roadmap |
 | 2 | 4–6 | Existing approaches, research gap and integration proposal |
 | 3 | 7–11 | Five criteria, two phases, architecture, applications and TRL |
-| 4 | 12–13 | Synthesis, closing question and discussion |
-| Appendix | 14–15 | Evidence sources and methodology references |
-| Appendix | 16 | Proposed data sources, fields, access and unresolved scope |
+| 4 | 12–14 | Synthesis, closing question, thanks and discussion |
+| Appendix | 15–16 | Evidence sources and methodology references |
+| Appendix | 17 | Proposed data sources, fields, access and unresolved scope |
 
 ## Project files
 
@@ -57,6 +57,8 @@ Speaker notes open in an overlay **on the same screen**. Use them during rehears
 The supplied Group 19 Speech Preparation Outline is the source for the sequence and proposed algorithm. The presentation follows the additional brief's more cautious language where the outline overstates objectivity or bias removal. The system remains at TRL 2. No final films, dataset statistics, weights, release-year range or experimental results have been invented.
 
 The revision also follows the user's Speaker 2 script and the supplied AW7, Week 8, Week 9 and oral-presentation assessment guidance. The main slides emphasize the academic argument while detailed sources, dataset characteristics and delivery cues remain available in notes and appendices. The original project has been preserved in `versions/01-original/`, including its complete ZIP.
+
+Projected slides omit speaker metadata, the long formal proposal title and repeated explanatory captions. Speaker assignments and fuller explanations remain available in the overview and rehearsal notes. After the audience question on slide 13, advance to the thank-you screen for discussion.
 
 Slide 8 includes the verified weighted-rating form W = (vR + mC) / (v + m), published in IMDb's Ratings FAQ for its Top 250 calculation. It is explicitly an illustrative model for a rating source: v is a rating count, R a mean film rating, C a prior mean, and m a prior strength. Revenue and award counts are not substituted for rating counts. The cross-source model, priors and criterion weights are still to be specified and validated.
 

@@ -6,7 +6,8 @@
   const slides = Array.from(document.querySelectorAll('#slides > .slide'));
   if (!stage || !slides.length) return;
 
-  const MAIN_SLIDE_COUNT = Math.min(13, slides.length);
+  const firstAppendix = slides.findIndex((slide) => slide.matches('.references, [data-appendix]'));
+  const MAIN_SLIDE_COUNT = firstAppendix < 0 ? slides.length : firstAppendix;
   const byId = (id) => document.getElementById(id);
   const dialog = byId('deck-dialog');
   const dialogContent = byId('dialog-content');
@@ -23,7 +24,7 @@
   };
 
   let current = 0;
-  let returnFromReferences = 12;
+  let returnFromReferences = MAIN_SLIDE_COUNT - 1;
   let dialogMode = null;
   let previousFocus = null;
   let resizeFrame = 0;
@@ -241,9 +242,8 @@
   }
 
   function toggleDatasetPlan() {
-    const datasetIndex = slides.findIndex((slide) => slide.dataset.appendix === 'datasets');
-    const target = datasetIndex >= 0 ? datasetIndex : 15;
-    if (target >= slides.length) return;
+    const target = slides.findIndex((slide) => slide.dataset.appendix === 'datasets');
+    if (target < 0) return;
     goToSlide(current === target ? returnFromReferences : target);
   }
 
