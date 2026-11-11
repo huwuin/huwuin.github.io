@@ -15,7 +15,11 @@
   const previousButton = byId('prev-slide');
   const nextButton = byId('next-slide');
   const stations = Array.from(document.querySelectorAll('.station[data-go]'));
+  const speakerFocusItems = Array.from(document.querySelectorAll('.speaker-focus'));
+  const detailSlides = slides.filter((slide) => slide.querySelector('[data-detail-panel]'));
+  const detailHeadings = new Map(detailSlides.map((slide) => [slide, slide.getAttribute('aria-labelledby')]));
   const controls = {
+    detail: byId('detail-toggle'),
     overview: byId('overview-toggle'),
     notes: byId('notes-toggle'),
     references: byId('references-toggle'),
@@ -74,6 +78,57 @@
     if (status) status.textContent = text;
   }
 
+  function clearSpeakerFocus() {
+    speakerFocusItems.forEach((item) => item.classList.remove('is-focused'));
+  }
+
+  function setSlideDetail(slide, expanded) {
+    const panel = slide.querySelector('[data-detail-panel]');
+    const base = slide.querySelector('[data-detail-base]');
+    if (!panel || !base) return;
+    base.hidden = expanded;
+    panel.hidden = !expanded;
+    slide.classList.toggle('is-detail-open', expanded);
+    const heading = expanded ? panel.querySelector('h2[id]')?.id : null;
+    slide.setAttribute('aria-labelledby', heading || detailHeadings.get(slide));
+  }
+
+  function updateDetailControl() {
+    const slide = slides[current];
+    const panel = slide.querySelector('[data-detail-panel]');
+    const button = controls.detail;
+    if (!button) return;
+    button.hidden = !panel;
+    const expanded = Boolean(panel && !panel.hidden);
+    button.setAttribute('aria-expanded', String(expanded));
+    if (!panel) {
+      button.removeAttribute('aria-controls');
+      return;
+    }
+    const label = expanded ? 'Return to slide' : `Show ${slide.dataset.detailLabel}`;
+    button.title = `${label} (E)`;
+    button.setAttribute('aria-label', button.title);
+    button.setAttribute('aria-controls', panel.id);
+  }
+
+  function toggleSlideDetail() {
+    const slide = slides[current];
+    const panel = slide.querySelector('[data-detail-panel]');
+    if (!panel) return;
+    const expanded = panel.hidden;
+    setSlideDetail(slide, expanded);
+    updateDetailControl();
+    announce(expanded ? `${slide.dataset.detailLabel}.` : `${slide.dataset.title}.`);
+  }
+
+  function focusSpeakerItem(item) {
+    if (!item || !item.closest('.slide.is-active')) return false;
+    clearSpeakerFocus();
+    item.classList.add('is-focused');
+    announce(`Highlight: ${item.dataset.focusLabel || item.textContent.trim()}`);
+    return true;
+  }
+
   function setText(id, value) {
     const element = byId(id);
     if (element) element.textContent = value;
@@ -95,6 +150,8 @@
     const next = clamp(Number(index) || 0, 0, slides.length - 1);
     const old = current;
     dismissClapperboard();
+    clearSpeakerFocus();
+    detailSlides.forEach((slide) => setSlideDetail(slide, false));
     if (next >= MAIN_SLIDE_COUNT && old < MAIN_SLIDE_COUNT) returnFromReferences = old;
     current = next;
 
@@ -133,6 +190,7 @@
     if (previousButton) previousButton.disabled = next === 0;
     if (nextButton) nextButton.disabled = next === slides.length - 1;
     if (controls.references) controls.references.setAttribute('aria-pressed', String(!main));
+    updateDetailControl();
 
     updateHash(next);
     document.title = `${slides[next].dataset.title || 'Diamond Mine'} · Diamond Mine`;
@@ -226,12 +284,15 @@
       ['Home / End', 'First / last main slide'],
       ['O', 'Open the mine map'],
       ['N', 'Open presenter notes'],
+      ['E', 'Show / hide the example on slide 8 or validation on slide 10'],
+      ['1–5', 'Highlight a source, study or challenge on slides 4–6'],
       ['R', 'References / return to your slide'],
       ['D', 'Dataset plan / return to your slide'],
+      ['A', 'Architecture diagram / return to your slide'],
       ['F', 'Enter / leave fullscreen'],
       ['C', 'Replay the cinema clapperboard'],
       ['?', 'Show keyboard controls'],
-      ['Escape', 'Close the current overlay or dismiss the clapperboard'],
+      ['Escape', 'Close an overlay, slide detail or highlight'],
     ].forEach(([key, description]) => list.append(makeElement('dt', '', key), makeElement('dd', '', description)));
     openDialog('help', 'Presentation controls', list);
   }
@@ -243,6 +304,12 @@
 
   function toggleDatasetPlan() {
     const target = slides.findIndex((slide) => slide.dataset.appendix === 'datasets');
+    if (target < 0) return;
+    goToSlide(current === target ? returnFromReferences : target);
+  }
+
+  function toggleArchitecture() {
+    const target = slides.findIndex((slide) => slide.dataset.appendix === 'architecture');
     if (target < 0) return;
     goToSlide(current === target ? returnFromReferences : target);
   }
@@ -261,11 +328,21 @@
   nextButton?.addEventListener('click', () => goToSlide(current + 1));
   controls.overview?.addEventListener('click', showOverview);
   controls.notes?.addEventListener('click', showNotes);
+  controls.detail?.addEventListener('click', toggleSlideDetail);
   controls.references?.addEventListener('click', toggleReferences);
   controls.fullscreen?.addEventListener('click', toggleFullscreen);
   controls.help?.addEventListener('click', showHelp);
   byId('dialog-close')?.addEventListener('click', closeDialog);
   stations.forEach((station) => station.addEventListener('click', () => goToSlide(Number(station.dataset.go))));
+  speakerFocusItems.forEach((item) => {
+    item.addEventListener('click', () => focusSpeakerItem(item));
+    item.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      event.stopPropagation();
+      focusSpeakerItem(item);
+    });
+  });
 
   if (dialog) {
     dialog.addEventListener('close', () => {
@@ -290,7 +367,12 @@
         event.preventDefault();
         dismissClapperboard();
       }
-      if (dialog?.open) { event.preventDefault(); closeDialog(); }
+      if (dialog?.open) { event.preventDefault(); closeDialog(); return; }
+      if (slides[current].classList.contains('is-detail-open')) {
+        event.preventDefault();
+        toggleSlideDetail();
+      }
+      clearSpeakerFocus();
       return;
     }
     if (dialog?.open) return;
@@ -299,6 +381,10 @@
     // Keep native Space activation on controls, while arrow navigation still
     // works after clicking a station, closing notes, or using the mouse arrows.
     if (event.key === ' ' && target instanceof Element && target.closest('button, a, [role="button"]')) return;
+    if (/^[1-5]$/.test(event.key) && focusSpeakerItem(slides[current].querySelector(`[data-focus="${event.key}"]`))) {
+      event.preventDefault();
+      return;
+    }
     let action;
     switch (event.key) {
       case 'ArrowRight': case ' ': case 'PageDown': action = () => goToSlide(current + 1); break;
@@ -307,8 +393,10 @@
       case 'End': action = () => goToSlide(MAIN_SLIDE_COUNT - 1); break;
       case 'o': case 'O': action = showOverview; break;
       case 'n': case 'N': action = showNotes; break;
+      case 'e': case 'E': if (event.repeat) return; action = toggleSlideDetail; break;
       case 'r': case 'R': action = toggleReferences; break;
       case 'd': case 'D': action = toggleDatasetPlan; break;
+      case 'a': case 'A': action = toggleArchitecture; break;
       case 'f': case 'F': action = toggleFullscreen; break;
       case 'c': case 'C': action = () => playClapperboard(); break;
       case '?': action = showHelp; break;

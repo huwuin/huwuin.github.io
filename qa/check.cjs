@@ -6,8 +6,10 @@ const { pathToFileURL } = require('node:url');
 
 const root = path.resolve(__dirname, '..');
 const output = path.join(__dirname, 'screenshots');
-const MAIN_SLIDES = 14;
-const TOTAL_SLIDES = MAIN_SLIDES + 3;
+const MAIN_SLIDES = 13;
+const DATASET_SLIDE = MAIN_SLIDES + 3;
+const ARCHITECTURE_SLIDE = MAIN_SLIDES + 4;
+const TOTAL_SLIDES = ARCHITECTURE_SLIDE;
 fs.mkdirSync(output, { recursive: true });
 const report = { checks: [], consoleErrors: [], pageErrors: [], externalRequests: [], layouts: [] };
 const check = (condition, label, detail) => {
@@ -27,11 +29,11 @@ const check = (condition, label, detail) => {
     const state = () => page.evaluate(() => ({ slide: Number(document.getElementById('stage').dataset.slide), active: document.querySelectorAll('.slide.is-active').length, hash: location.hash, dialog: document.getElementById('deck-dialog').open }));
     const defocus = () => page.evaluate(() => document.activeElement?.blur());
     const key = async (value) => { await defocus(); await page.keyboard.press(value); };
-    const go = async (index) => { await page.evaluate((number) => { location.hash = `slide-${number}`; }, index); await page.waitForFunction((number) => Number(document.getElementById('stage').dataset.slide) === number, index); };
+    const go = async (index) => { await page.evaluate((number) => { location.hash = `slide-${number}`; }, index); await page.waitForFunction((number) => Number(document.getElementById('stage').dataset.slide) === number, index); await page.locator('.slide.is-active').waitFor({ state: 'visible' }); };
 
     await page.goto(url);
     await page.waitForFunction(() => document.getElementById('stage')?.dataset.slide === '1');
-    check(await page.locator('#slides > .slide').count() === TOTAL_SLIDES, '14 main slides and 3 appendix pages');
+    check(await page.locator('#slides > .slide').count() === TOTAL_SLIDES, '13 main slides and 4 appendix pages');
     check((await state()).active === 1, 'One active slide initially');
     await key('ArrowRight'); check((await state()).slide === 2, 'Right Arrow advances');
     await key('Space'); check((await state()).slide === 3, 'Space advances');
@@ -45,11 +47,14 @@ const check = (condition, label, detail) => {
     check((await state()).slide === 4 && (await state()).active === 1, 'Rapid backward input preserves one active slide');
     await key('r'); check((await state()).slide === MAIN_SLIDES + 1, 'R opens references');
     await key('ArrowRight'); check((await state()).slide === MAIN_SLIDES + 2, 'References include second page');
-    await key('ArrowRight'); check((await state()).slide === TOTAL_SLIDES, 'Appendix includes dataset plan');
+    await key('ArrowRight'); check((await state()).slide === DATASET_SLIDE, 'Appendix includes dataset plan');
+    await key('ArrowRight'); check((await state()).slide === ARCHITECTURE_SLIDE, 'Appendix includes system architecture');
     await key('ArrowRight'); check((await state()).slide === TOTAL_SLIDES, 'Next clamps at last appendix');
     await key('r'); check((await state()).slide === 4, 'R returns to original main slide');
-    await key('d'); check((await state()).slide === TOTAL_SLIDES, 'D opens the dataset plan');
+    await key('d'); check((await state()).slide === DATASET_SLIDE, 'D opens the dataset plan');
     await key('d'); check((await state()).slide === 4, 'D returns from dataset plan');
+    await key('a'); check((await state()).slide === ARCHITECTURE_SLIDE, 'A opens system architecture');
+    await key('a'); check((await state()).slide === 4, 'A returns from system architecture');
     await key('o'); check((await state()).dialog, 'O opens overview');
     check(await page.locator('.overview-item').count() === TOTAL_SLIDES, 'Overview lists all slides');
     await page.locator('.overview-item').nth(8).click();
@@ -76,6 +81,40 @@ const check = (condition, label, detail) => {
     check(await page.evaluate(() => [...document.querySelectorAll('.slide:not(.is-active)')].every((slide) => slide.inert && slide.getAttribute('aria-hidden') === 'true')), 'Inactive slides inert and hidden from assistive technology');
     check(await page.locator('#live-status').getAttribute('aria-live') === 'polite', 'Slide changes announced politely');
 
+    await go(7);
+    check(await page.locator('#detail-toggle').isHidden(), 'Slide detail control is absent where it does not apply');
+    await go(8);
+    check(await page.locator('.bayesian-mine').isVisible() && await page.locator('#parasite-example').isHidden(), 'Phase 1 starts with the audience-rating balance');
+    check((await page.locator('.scale-labels').textContent()).includes('Prior: catalogue average'), 'Audience prior names the catalogue average');
+    await key('e');
+    check((await state()).slide === 8 && await page.locator('#parasite-example').isVisible() && await page.locator('.bayesian-mine').isHidden(), 'E shows Parasite without adding or changing a slide');
+    check(await page.locator('.illustration-warning').isVisible() && await page.locator('.illustration-warning').innerText() === 'Illustrative calculation, not a measured result', 'The whole Parasite example has a visible illustrative warning');
+    const calculation = await page.locator('#parasite-example').evaluate((example) => ({ values: [...example.querySelectorAll('dd')].map((cell) => Number(cell.textContent)), output: Number(example.querySelector('.example-result strong').firstChild.textContent), heading: example.querySelector('h2').id, labelledBy: example.closest('.slide').getAttribute('aria-labelledby') }));
+    check(JSON.stringify(calculation.values) === '[0.85,0.95,0.9,0.7,0.11]' && Math.abs(calculation.values.reduce((sum, value) => sum + value, 0) / 5 * 100 - calculation.output) < .000001 && calculation.output === 70.2, 'Five supplied indicators give an equal-weight score of 70.2/100', calculation);
+    check(calculation.heading === calculation.labelledBy, 'The example has the active slide accessible heading');
+    await key('n'); await page.keyboard.press('Escape');
+    check(!(await state()).dialog && await page.locator('#parasite-example').isVisible(), 'Closing rehearsal notes preserves the current example');
+    await key('e');
+    check(await page.locator('.bayesian-mine').isVisible() && await page.locator('#parasite-example').isHidden(), 'E returns to the balance');
+    await page.locator('.deck-footer').hover();
+    await page.locator('#detail-toggle').click();
+    check(await page.locator('#parasite-example').isVisible(), 'Footer detail button opens the example');
+    await key('ArrowRight'); await key('ArrowLeft');
+    check((await state()).slide === 8 && await page.locator('#parasite-example').isHidden(), 'Backward navigation resets the example to its main view');
+    await key('e'); await key('Escape');
+    check(await page.locator('#parasite-example').isHidden(), 'Escape returns from slide detail without navigating');
+    await go(9);
+    const profiles = await page.locator('.diversity-comparison').evaluate((diagram) => [...diagram.querySelectorAll('.candidate-group')].map((group) => [...group.querySelectorAll('.candidate')].map((film) => ({ id: film.dataset.candidate, region: film.className, colour: getComputedStyle(film.querySelector('svg')).stroke, score: film.dataset.evidenceScore || null }))));
+    check(profiles[0].every((film) => profiles[1].some((other) => JSON.stringify(other) === JSON.stringify(film))) && profiles[0].map((film) => film.id).join() !== profiles[1].map((film) => film.id).join(), 'Reordering preserves each film identity, region colour and evidence score', profiles);
+    check(profiles.every((group) => group.findIndex((film) => film.id === 'P') >= 0 && group.find((film) => film.id === 'P').score === '70.2') && await page.locator('.candidate-legend').isVisible(), 'Parasite retains 70.2 and the region colours have a visible legend');
+    await go(10); await key('E');
+    check(await page.locator('#validation-plan').isVisible() && await page.locator('.beneficiary-roles').isHidden() && await page.locator('.readiness-current').isVisible() && await page.locator('.readiness-next').isVisible(), 'Validation replaces applications while both TRL states stay visible');
+    check((await page.locator('#validation-plan').innerText()).includes('Stability, diversity and mean score loss'), 'Validation names the three proposed evaluation dimensions');
+    await key('ArrowRight'); await key('ArrowLeft');
+    check(await page.locator('#validation-plan').isHidden() && await page.locator('.beneficiary-roles').isVisible(), 'Returning to applications restores its main view');
+    await go(DATASET_SLIDE);
+    check((await page.locator('.dataset-scope').innerText()).includes('1910–2024'), 'Dataset appendix uses the agreed RP date scope');
+
     await defocus();
     for (const [width, height] of [[1920,1080], [1280,720]]) {
       await page.setViewportSize({ width, height });
@@ -96,6 +135,18 @@ const check = (condition, label, detail) => {
         check(layout.scroll.width <= width && layout.scroll.height <= height, `${width}×${height} slide ${slide}: no page overflow`);
         check(layout.outside.length === 0, `${width}×${height} slide ${slide}: text stays on canvas`, layout.outside);
         await page.screenshot({ path: path.join(output, `${width}x${height}-${String(slide).padStart(2,'0')}.png`) });
+        if ([8,10].includes(slide)) {
+          await key('e'); await page.waitForTimeout(300);
+          const detailLayout = await page.locator('.slide.is-active [data-detail-panel]').evaluate((panel) => {
+            const stage = document.getElementById('stage').getBoundingClientRect();
+            return [...panel.querySelectorAll('h2,h3,p,dt,dd,strong')].filter((element) => {
+              const r = element.getBoundingClientRect();
+              return r.width && r.height && (r.left < stage.left - 1 || r.top < stage.top - 1 || r.right > stage.right + 1 || r.bottom > stage.bottom + 1);
+            }).map((element) => element.textContent.trim());
+          });
+          check(detailLayout.length === 0, `${width}×${height} slide ${slide}: detail text stays on canvas`, detailLayout);
+          await page.screenshot({ path: path.join(output, `${width}x${height}-${String(slide).padStart(2,'0')}-detail.png`) });
+        }
       }
     }
 
@@ -107,6 +158,9 @@ const check = (condition, label, detail) => {
     check(motion.length === 0, 'Reduced-motion mode removes long transitions', motion.slice(0, 8));
     const animations = await page.evaluate(() => [...document.querySelectorAll('.slide.is-active, .slide.is-active *')].filter((element) => { const style = getComputedStyle(element); return style.animationName !== 'none' && style.animationDuration.split(',').some((duration) => parseFloat(duration) > .01); }).map((element) => element.className.baseVal || element.className));
     check(animations.length === 0, 'Reduced-motion mode removes active decorative animation', animations.slice(0, 8));
+    await go(8); await key('e');
+    const detailMotion = await page.locator('#parasite-example').evaluate((panel) => getComputedStyle(panel).animationName);
+    check(await page.locator('#parasite-example').isVisible() && detailMotion === 'none', 'Reduced motion preserves the example without a reveal animation');
     await page.setViewportSize({ width: 1024, height: 768 });
     await page.waitForTimeout(100);
     const letterbox = await page.locator('#stage').boundingBox();
@@ -151,7 +205,7 @@ const check = (condition, label, detail) => {
     check(report.consoleErrors.length === 0 && report.pageErrors.length === 0, 'No console or JavaScript errors', [...report.consoleErrors, ...report.pageErrors]);
     check(report.externalRequests.length === 0, 'Deck makes no network requests', report.externalRequests);
     fs.writeFileSync(path.join(__dirname, 'report.json'), JSON.stringify(report, null, 2));
-    console.log(JSON.stringify({ passed: report.checks.filter((entry) => entry.pass).length, failed: report.checks.filter((entry) => !entry.pass), screenshots: TOTAL_SLIDES * 2, report: path.join(__dirname, 'report.json') }, null, 2));
+    console.log(JSON.stringify({ passed: report.checks.filter((entry) => entry.pass).length, failed: report.checks.filter((entry) => !entry.pass), screenshots: TOTAL_SLIDES * 2 + 4, report: path.join(__dirname, 'report.json') }, null, 2));
     if (report.checks.some((entry) => !entry.pass)) process.exitCode = 1;
   } finally { await browser.close(); }
 })().catch((error) => { console.error(error); process.exitCode = 1; });

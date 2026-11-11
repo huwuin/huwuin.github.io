@@ -1,6 +1,6 @@
 # Diamond Mine
 
-An offline HTML presentation for English for Professional and Academic Communication, Group 19. Fourteen main slides follow the four-speaker research outline and end with a thank-you screen. Two reference pages and a dataset-plan appendix follow.
+An offline HTML presentation for English for Professional and Academic Communication, Group 19. Thirteen main slides follow the four-speaker research outline and end with a thank-you screen. Two reference pages, a dataset plan and the complete system architecture follow as supporting appendices.
 
 ## Open the presentation
 
@@ -18,14 +18,17 @@ The fixed 1600 × 900 stage scales proportionally to the screen. Other aspect ra
 | End | Thank-you screen |
 | O | Slide overview |
 | N | Speaker notes for the current slide |
+| E | Show / hide Parasite on slide 8 or validation on slide 10 |
+| 1–5 | Highlight a source, study or challenge on slides 4–6 |
 | R | Open references / return to the previous main slide |
 | D | Open the dataset plan / return to the previous main slide |
+| A | Open the system architecture / return to the previous main slide |
 | C | Replay the cinema clapper transition |
 | F | Toggle fullscreen |
 | ? | Show controls |
-| Escape | Close an overlay |
+| Escape | Close an overlay or slide detail, or clear a highlight |
 
-The footer provides mouse controls and clickable railway stations. Move the pointer to the footer to reveal its additional controls, or reach them with Tab. A horizontal swipe also advances or reverses the deck on touch devices. Space retains native activation when a button or link has keyboard focus. Slides do not advance automatically.
+The footer provides mouse controls and clickable railway stations. Move the pointer to the footer to reveal its additional controls, or reach them with Tab. A horizontal swipe also advances or reverses the deck on touch devices. Space retains native activation when a button or link has keyboard focus. Slides do not advance automatically. On slides 8 and 10, E toggles an additional view within the same slide. The footer E button also works with a mouse or keyboard. Right Arrow and Space still advance to the next slide. Returning to a slide restores its main view.
 
 The cinema slate lasts 1.10 seconds. It plays on the opening transition and when returning to the first slide. Navigation or Escape cancels it immediately. Rail highlights loop continuously while the slide is visible. All slides use the same obsidian background. Reduced-motion preferences keep the rail highlights visible without animation.
 
@@ -36,11 +39,12 @@ Speaker notes open in an overlay **on the same screen**. Use them during rehears
 | Speaker | Slides | Argument |
 | --- | --- | --- |
 | 1 | 1–3 | Opening question, motivation and research roadmap |
-| 2 | 4–6 | Existing approaches, research gap and integration proposal |
-| 3 | 7–11 | Five criteria, two phases, architecture, applications and TRL |
-| 4 | 12–14 | Synthesis, closing question, thanks and discussion |
-| Appendix | 15–16 | Evidence sources and methodology references |
-| Appendix | 17 | Proposed data sources, fields, access and unresolved scope |
+| 2 | 4–6 | Existing evidence, previous research and the applied research gap |
+| 3 | 7–10 | Five criteria, two phases, applications and TRL |
+| 4 | 11–13 | Synthesis, closing question, thanks and discussion |
+| Appendix | 14–15 | Evidence sources and methodology references |
+| Appendix | 16 | Proposed data sources, fields, access and study scope |
+| Appendix | 17 | Complete system architecture |
 
 ## Project files
 
@@ -54,17 +58,23 @@ Speaker notes open in an overlay **on the same screen**. Use them during rehears
 
 ## Content and design decisions
 
-The supplied Group 19 Speech Preparation Outline is the source for the sequence and proposed algorithm. The presentation follows the additional brief's more cautious language where the outline overstates objectivity or bias removal. The system remains at TRL 2. No final films, dataset statistics, weights, release-year range or experimental results have been invented.
+The supplied Group 19 Speech Preparation Outline is the source for the sequence and proposed algorithm. The presentation follows the additional brief's more cautious language where the outline overstates objectivity or bias removal. The system remains at TRL 2. No final Top 10, dataset statistics or experimental results are claimed. The illustrative Parasite calculation uses the values and equal weights supplied in the RP.
 
 The revision also follows the user's Speaker 2 script and the supplied AW7, Week 8, Week 9 and oral-presentation assessment guidance. The main slides emphasize the academic argument while detailed sources, dataset characteristics and delivery cues remain available in notes and appendices. The original project has been preserved in `versions/01-original/`, including its complete ZIP.
 
-Projected slides omit speaker metadata, the long formal proposal title and repeated explanatory captions. Speaker assignments and fuller explanations remain available in the overview and rehearsal notes. After the audience question on slide 13, advance to the thank-you screen for discussion.
+Slides 4–6 follow the revised three-minute literature review: evidence sources (about 55 seconds), contributions and scope of Wasserman (2015), Wang (2024) and Ziegler (2005) (about 60 seconds), then integration, representation and evaluation challenges (about 65 seconds). Use number keys or click the relevant row or challenge to highlight it. All content remains visible, and slide navigation always advances to the next slide. The notes contain the supplied speech and handoff. Study scope is not evidence that a method is ineffective. Evaluation concerns the selected list's diversity, stability and mean evidence score; it does not imply that diversification must change each film's individual score.
 
-Slide 8 includes the verified weighted-rating form W = (vR + mC) / (v + m), published in IMDb's Ratings FAQ for its Top 250 calculation. It is explicitly an illustrative model for a rating source: v is a rating count, R a mean film rating, C a prior mean, and m a prior strength. Revenue and award counts are not substituted for rating counts. The cross-source model, priors and criterion weights are still to be specified and validated.
+Projected slides omit speaker metadata, the long formal proposal title and repeated explanatory captions. Speaker assignments and fuller explanations remain available in the overview and rehearsal notes. After the audience question on slide 12, advance to the thank-you screen for discussion.
+
+The current Innovation and Description instructions supersede David's earlier script. Slides 7–10 remain four slides for approximately three minutes. Research gap, slide 6, is preserved. Data preparation precedes estimation. Bayesian regularisation applies only to audience ratings, using the catalogue average as a prior. All five indicators are then normalised and combined into individual evidence scores. Diversity optimisation considers regions, languages, genres and exposure when choosing and ordering the final selection.
+
+Slide 8 retains the balance. Press E to replace it with the supplied Parasite example: Audience 0.85, Critics 0.95, Awards 0.90, Economic 0.70 and Recognition 0.11. Equal weights give 70.2/100. The whole example is labelled “Illustrative calculation, not a measured result”. Slide 9 gives each candidate a persistent identifier and production-region colour. P changes position while retaining the same illustrative evidence score. It is an explanatory reordering, not an experimental output.
+
+Slide 10 separates applications from the validation plan with E while keeping TRL 2 and the target TRL 3 visible. The proposed validation compares IMDb and Rotten Tomatoes baselines and assesses stability, diversity and mean score loss. Uneven coverage and proxy indicators remain limitations. The agreed RP date window is 1910–2024. Weights, transformations, missing-data handling, prior strength and diversification settings still require specification and testing. Notes distinguish the proposed mechanism from the published methods cited as background. The complete process remains available with A.
 
 The five criteria are complementary evidence categories, not mutually exclusive platforms. BFI polls and cinematic citation networks are distinguished. Data reproducibility is an aim subject to availability and licensing. The dataset appendix is a source-selection plan and does not claim that the sources have been acquired or audited.
 
-All diagrams are original inline SVG or CSS. Geology, copper rails and mineral-colored refinement form the visual narrative. Slides 5 and 6 share the same rail diagram so the disconnected routes visibly connect. The final rail returns to the light introduced at the opening. The continuous railway composition of slide 10 is retained. Only the active slide is exposed to assistive technology. The presentation has no analytics, remote fonts or runtime dependencies.
+All diagrams are original inline SVG or CSS. Geology, copper rails and mineral-colored refinement form the visual narrative. Slide 6 keeps the evidence routes disconnected; slide 7 connects them as the innovation section begins. The final rail returns to the light introduced at the opening. The continuous railway architecture is retained in the appendix. Only the active slide is exposed to assistive technology. The presentation has no analytics, remote fonts or runtime dependencies.
 
 AI assistance for code and editing: OpenAI Codex. Research proposal, research decisions and oral delivery: Group 19. This acknowledgement also appears in the reference appendix.
 

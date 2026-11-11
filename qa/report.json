@@ -1,7 +1,7 @@
 {
   "checks": [
     {
-      "label": "14 main slides and 3 appendix pages",
+      "label": "13 main slides and 4 appendix pages",
       "pass": true
     },
     {
@@ -53,6 +53,10 @@
       "pass": true
     },
     {
+      "label": "Appendix includes system architecture",
+      "pass": true
+    },
+    {
       "label": "Next clamps at last appendix",
       "pass": true
     },
@@ -66,6 +70,14 @@
     },
     {
       "label": "D returns from dataset plan",
+      "pass": true
+    },
+    {
+      "label": "A opens system architecture",
+      "pass": true
+    },
+    {
+      "label": "A returns from system architecture",
       "pass": true
     },
     {
@@ -126,6 +138,168 @@
     },
     {
       "label": "Slide changes announced politely",
+      "pass": true
+    },
+    {
+      "label": "Slide detail control is absent where it does not apply",
+      "pass": true
+    },
+    {
+      "label": "Phase 1 starts with the audience-rating balance",
+      "pass": true
+    },
+    {
+      "label": "Audience prior names the catalogue average",
+      "pass": true
+    },
+    {
+      "label": "E shows Parasite without adding or changing a slide",
+      "pass": true
+    },
+    {
+      "label": "The whole Parasite example has a visible illustrative warning",
+      "pass": true
+    },
+    {
+      "label": "Five supplied indicators give an equal-weight score of 70.2/100",
+      "pass": true,
+      "detail": {
+        "values": [
+          0.85,
+          0.95,
+          0.9,
+          0.7,
+          0.11
+        ],
+        "output": 70.2,
+        "heading": "parasite-title",
+        "labelledBy": "parasite-title"
+      }
+    },
+    {
+      "label": "The example has the active slide accessible heading",
+      "pass": true
+    },
+    {
+      "label": "Closing rehearsal notes preserves the current example",
+      "pass": true
+    },
+    {
+      "label": "E returns to the balance",
+      "pass": true
+    },
+    {
+      "label": "Footer detail button opens the example",
+      "pass": true
+    },
+    {
+      "label": "Backward navigation resets the example to its main view",
+      "pass": true
+    },
+    {
+      "label": "Escape returns from slide detail without navigating",
+      "pass": true
+    },
+    {
+      "label": "Reordering preserves each film identity, region colour and evidence score",
+      "pass": true,
+      "detail": [
+        [
+          {
+            "id": "A",
+            "region": "candidate region-north-america",
+            "colour": "rgb(209, 170, 131)",
+            "score": null
+          },
+          {
+            "id": "B",
+            "region": "candidate region-north-america",
+            "colour": "rgb(209, 170, 131)",
+            "score": null
+          },
+          {
+            "id": "C",
+            "region": "candidate region-europe",
+            "colour": "rgb(245, 242, 231)",
+            "score": null
+          },
+          {
+            "id": "D",
+            "region": "candidate region-north-america",
+            "colour": "rgb(209, 170, 131)",
+            "score": null
+          },
+          {
+            "id": "E",
+            "region": "candidate region-europe",
+            "colour": "rgb(245, 242, 231)",
+            "score": null
+          },
+          {
+            "id": "P",
+            "region": "candidate region-east-asia",
+            "colour": "rgb(171, 213, 199)",
+            "score": "70.2"
+          }
+        ],
+        [
+          {
+            "id": "A",
+            "region": "candidate region-north-america",
+            "colour": "rgb(209, 170, 131)",
+            "score": null
+          },
+          {
+            "id": "P",
+            "region": "candidate region-east-asia",
+            "colour": "rgb(171, 213, 199)",
+            "score": "70.2"
+          },
+          {
+            "id": "C",
+            "region": "candidate region-europe",
+            "colour": "rgb(245, 242, 231)",
+            "score": null
+          },
+          {
+            "id": "B",
+            "region": "candidate region-north-america",
+            "colour": "rgb(209, 170, 131)",
+            "score": null
+          },
+          {
+            "id": "E",
+            "region": "candidate region-europe",
+            "colour": "rgb(245, 242, 231)",
+            "score": null
+          },
+          {
+            "id": "D",
+            "region": "candidate region-north-america",
+            "colour": "rgb(209, 170, 131)",
+            "score": null
+          }
+        ]
+      ]
+    },
+    {
+      "label": "Parasite retains 70.2 and the region colours have a visible legend",
+      "pass": true
+    },
+    {
+      "label": "Validation replaces applications while both TRL states stay visible",
+      "pass": true
+    },
+    {
+      "label": "Validation names the three proposed evaluation dimensions",
+      "pass": true
+    },
+    {
+      "label": "Returning to applications restores its main view",
+      "pass": true
+    },
+    {
+      "label": "Dataset appendix uses the agreed RP date scope",
       "pass": true
     },
     {
@@ -233,6 +407,11 @@
       "detail": []
     },
     {
+      "label": "1920×1080 slide 8: detail text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
       "label": "1920×1080 slide 9: stage fits",
       "pass": true
     },
@@ -255,6 +434,11 @@
     },
     {
       "label": "1920×1080 slide 10: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1920×1080 slide 10: detail text stays on canvas",
       "pass": true,
       "detail": []
     },
@@ -454,6 +638,11 @@
       "detail": []
     },
     {
+      "label": "1280×720 slide 8: detail text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
       "label": "1280×720 slide 9: stage fits",
       "pass": true
     },
@@ -476,6 +665,11 @@
     },
     {
       "label": "1280×720 slide 10: text stays on canvas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "1280×720 slide 10: detail text stays on canvas",
       "pass": true,
       "detail": []
     },
@@ -583,6 +777,10 @@
       "label": "Reduced-motion mode removes active decorative animation",
       "pass": true,
       "detail": []
+    },
+    {
+      "label": "Reduced motion preserves the example without a reveal animation",
+      "pass": true
     },
     {
       "label": "4:3 viewport letterboxes without clipping",
