@@ -372,14 +372,14 @@
       "pass": true
     },
     {
-      "label": "Rail accent travels for about three seconds, fades smoothly and finishes invisible",
+      "label": "Rail accent travels for about 1.5 seconds, fades smoothly and finishes invisible",
       "pass": true,
       "detail": {
-        "duration": 3600,
+        "duration": 1800,
         "iterations": 1,
         "middle": {
           "opacity": 0.72,
-          "offset": -327
+          "offset": -163.5
         },
         "late": 0.36,
         "ended": 0
@@ -390,7 +390,7 @@
       "pass": true,
       "detail": {
         "opacity": 0.72,
-        "offset": 327,
+        "offset": 163.5,
         "late": 0.36
       }
     },

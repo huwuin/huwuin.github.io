@@ -50,15 +50,15 @@
     cancelRailMotion();
     railSlide = slide;
     if (reducedMotion.matches) return;
-    // Hold the moving accent for about three seconds, then fade over 600ms.
+    // Hold the moving accent for about 1.5 seconds, then fade over 300ms.
     // Document-timeline animations keep their age while slide details hide them.
-    const distance = backward ? 784.8 : -784.8;
+    const distance = backward ? 392.4 : -392.4;
     railAnimations = Array.from(slide.querySelectorAll('.track-energy'), (track) => track.animate([
       { opacity: 0, strokeDashoffset: '0px', offset: 0 },
       { opacity: .72, strokeDashoffset: `${distance * .05}px`, offset: .05 },
       { opacity: .72, strokeDashoffset: `${distance * (5 / 6)}px`, offset: 5 / 6 },
       { opacity: 0, strokeDashoffset: `${distance}px`, offset: 1 },
-    ], { duration: 3600, delay, iterations: 1, easing: 'linear', fill: 'none' }));
+    ], { duration: 1800, delay, iterations: 1, easing: 'linear', fill: 'none' }));
   }
 
   function dismissClapperboard() {
