@@ -303,6 +303,118 @@
       "pass": true
     },
     {
+      "label": "The opening uses the historical Golden Record hook and original vector",
+      "pass": true
+    },
+    {
+      "label": "The second slide explicitly imagines ten films and five selection criteria",
+      "pass": true
+    },
+    {
+      "label": "The confirmed team order and three-section index are preserved",
+      "pass": true
+    },
+    {
+      "label": "The final main slide carries the exact discreet, readable AI design credit",
+      "pass": true
+    },
+    {
+      "label": "Key 1 highlights the Background recap station",
+      "pass": true
+    },
+    {
+      "label": "Recap highlighting follows the speaker and selects one station at a time",
+      "pass": true
+    },
+    {
+      "label": "The highlighted statement and its rail station share the mineral accent",
+      "pass": true,
+      "detail": {
+        "node": "rgb(171, 213, 199)",
+        "text": "rgb(171, 213, 199)",
+        "unselected": "rgb(16, 22, 23)"
+      }
+    },
+    {
+      "label": "A mouse click highlights the Innovation recap station",
+      "pass": true
+    },
+    {
+      "label": "Space activates a focused recap station without navigating",
+      "pass": true
+    },
+    {
+      "label": "Enter activates a recap station without advancing",
+      "pass": true
+    },
+    {
+      "label": "Escape clears visual and accessible recap selection",
+      "pass": true
+    },
+    {
+      "label": "Backward navigation restores the recap without a stale highlight",
+      "pass": true
+    },
+    {
+      "label": "Existing source highlighting remains available",
+      "pass": true
+    },
+    {
+      "label": "The closing question returns to the imagined mission beside the diamond and one record",
+      "pass": true
+    },
+    {
+      "label": "The NASA source used by the RP is linked in the existing reference appendix",
+      "pass": true
+    },
+    {
+      "label": "The launch-date source is linked without duplicating the Golden Record reference",
+      "pass": true
+    },
+    {
+      "label": "Rail accent travels for about three seconds, fades smoothly and finishes invisible",
+      "pass": true,
+      "detail": {
+        "duration": 3600,
+        "iterations": 1,
+        "middle": {
+          "opacity": 0.72,
+          "offset": -327
+        },
+        "late": 0.36,
+        "ended": 0
+      }
+    },
+    {
+      "label": "Backward navigation reverses rail travel without reversing the fade",
+      "pass": true,
+      "detail": {
+        "opacity": 0.72,
+        "offset": 327,
+        "late": 0.36
+      }
+    },
+    {
+      "label": "Leaving a slide cancels its previous rail animation",
+      "pass": true
+    },
+    {
+      "label": "Rapid navigation leaves only the current slide rail burst running",
+      "pass": true
+    },
+    {
+      "label": "Returning from Parasite after the rail burst does not restart the accent",
+      "pass": true
+    },
+    {
+      "label": "Re-entering a slide starts a fresh finite rail burst",
+      "pass": true
+    },
+    {
+      "label": "Reduced motion cancels rail animations while the underlying tracks remain",
+      "pass": true
+    },
+    {
       "label": "1920×1080 slide 1: stage fits",
       "pass": true
     },
@@ -842,6 +954,22 @@
     },
     {
       "label": "Reduced motion skips clapper replay",
+      "pass": true
+    },
+    {
+      "label": "The final question waits for the speaker without automatic advance",
+      "pass": true
+    },
+    {
+      "label": "The speaker advances from the final question to Thank you",
+      "pass": true
+    },
+    {
+      "label": "References remain accessible during Q&A and return to Thank you",
+      "pass": true
+    },
+    {
+      "label": "Recap highlighting works when returning in reduced-motion mode",
       "pass": true
     },
     {

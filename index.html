@@ -29,6 +29,7 @@
   <symbol id="icon-globe" viewBox="0 0 48 48"><circle cx="24" cy="24" r="19"/><ellipse cx="24" cy="24" rx="8" ry="19"/><path d="M5 24H43M8 14C18 20 30 20 40 14M8 34C18 28 30 28 40 34"/></symbol>
   <symbol id="icon-developer" viewBox="0 0 100 100"><path d="M30 24 7 50 30 76M70 24 93 50 70 76M61 15 39 85"/></symbol>
   <symbol id="icon-viewer" viewBox="0 0 100 100"><path d="M20 12H80L98 38 50 92 2 38ZM2 38H98"/><path d="M43 43 63 55 43 67Z"/></symbol>
+  <symbol id="golden-record" viewBox="0 0 120 120"><circle cx="60" cy="60" r="53"/><circle cx="60" cy="60" r="46"/><circle cx="60" cy="60" r="40"/><circle cx="60" cy="60" r="15"/><circle cx="60" cy="60" r="3"/><path d="M21 35A47 47 0 0 1 35 21M85 99A47 47 0 0 0 99 85M40 28A38 38 0 0 1 77 26M80 92A38 38 0 0 1 43 94"/></symbol>
 </defs></svg>
 
 <main id="stage" aria-label="Diamond Mine presentation">
@@ -38,38 +39,36 @@
   </header>
 
   <div id="slides">
-    <section class="slide opening is-active" data-title="The question" data-speaker="1" data-section="Introduction" aria-labelledby="title-1">
-      <svg class="mine-scene" viewBox="0 0 1600 900" aria-hidden="true">
-        <defs><radialGradient id="mine-light"><stop stop-color="#bd9a6c" stop-opacity=".45"/><stop offset=".25" stop-color="#7d6248" stop-opacity=".14"/><stop offset="1" stop-color="#101617" stop-opacity="0"/></radialGradient><linearGradient id="cliff" x2="1" y2="1"><stop stop-color="#253131"/><stop offset="1" stop-color="#101617"/></linearGradient></defs>
-        <ellipse cx="1130" cy="455" rx="500" ry="430" fill="url(#mine-light)"/>
-        <g fill="none" stroke="#87958b" stroke-opacity=".13"><path d="M720 -20 900 84 858 230 1017 316 1042 477 997 628 860 730 851 920"/><path d="M825 -20 954 103 930 227 1059 328 1083 470 1047 599 971 710 998 920"/><path d="M952 -20 1045 110 1007 228 1100 353 1111 456"/><path d="M1610 23 1440 115 1494 255 1322 312 1286 454 1353 610 1463 693 1512 920"/><path d="M1555 -20 1370 98 1420 239 1270 299 1202 456 1288 619 1337 766 1377 920"/><path d="M1430 -20 1289 144 1330 237 1202 332 1160 455"/></g>
-        <path d="M1600 0H1475L1314 138 1354 244 1246 345 1215 465 1303 596 1328 743 1444 900H1600Z" fill="url(#cliff)" opacity=".7"/>
-        <path d="M738 900 1002 639 1098 479H1157L1291 647 1600 900" fill="#111718" opacity=".8"/>
-        <g stroke="#bc9271" fill="none"><path d="M819 900 1108 482M1375 900 1148 482" stroke-width="2"/><path d="M838 900 1112 482M1356 900 1145 482" stroke-width="2" opacity=".5"/><path d="M862 859H1331M917 787H1294M963 721H1258M1003 665H1228M1035 618H1203M1061 579H1183M1081 548H1168M1098 521H1157M1107 500H1150" stroke-width="2" opacity=".4"/></g>
-        <path d="M1114 480 1123 447 1137 447 1144 480" fill="#d7c5a1" opacity=".7"/>
-        <path d="M1129 445V413" stroke="#e8d7b3" opacity=".35"/>
+    <section class="slide opening is-active voyager-opening" data-title="Voyager and the Golden Record" data-speaker="1" data-section="Introduction" aria-labelledby="title-1">
+      <svg class="record-hero" viewBox="0 0 620 620" role="img" aria-label="Original stylised illustration of the Golden Record carried by Voyager. Historical sources: NASA, references 12 and 13.">
+        <defs><radialGradient id="record-gold"><stop stop-color="#d1aa83" stop-opacity=".13"/><stop offset=".8" stop-color="#d1aa83" stop-opacity=".045"/><stop offset="1" stop-color="#d1aa83" stop-opacity=".12"/></radialGradient></defs>
+        <circle cx="310" cy="310" r="256" fill="url(#record-gold)"/>
+        <use href="#golden-record" x="20" y="20" width="580" height="580"/>
       </svg>
       <div class="hero-copy">
-        <p class="eyebrow reveal">A RESEARCH PROPOSAL</p>
-        <h1 id="title-1" class="reveal">What is the<br>greatest movie<br><em>of all time?</em></h1>
+        <p class="eyebrow reveal">VOYAGER / 1977 <sup>[12, 13]</sup></p>
+        <h1 id="title-1" class="reveal">The Golden<br><em>Record</em></h1>
+        <p class="hero-sub reveal">Music. Sounds. Images.</p>
       </div>
+      <p class="record-credit">Original vector illustration <span>/</span> Research proposal</p>
     </section>
 
-    <section class="slide debate" data-title="Why is this so difficult?" data-speaker="1" data-section="Introduction" aria-labelledby="title-2">
-      <div class="debate-title"><h2 id="title-2">One question.<br><em>Different values.</em></h2><p class="body-copy">A trivia question became a debate.</p></div>
+    <section class="slide debate" data-title="Ten films: how do we choose?" data-speaker="1" data-section="Introduction" aria-labelledby="title-2">
+      <div class="debate-title"><p class="eyebrow">A HYPOTHETICAL MISSION</p><h2 id="title-2"><span class="film-limit">10</span> films.</h2><p class="selection-question">How do we choose?</p></div>
       <svg class="branch-map" viewBox="0 0 780 570" role="img" aria-label="The question of greatness branches into audience affection, critical acclaim, awards, financial success, and cinematic influence.">
         <g class="track-bed"><path d="M40 285H200C300 285 290 65 410 65H690M200 285C300 285 290 175 410 175H690M200 285H690M200 285C300 285 290 395 410 395H690M200 285C300 285 290 505 410 505H690"/></g>
         <g class="track-core"><path d="M40 285H200C300 285 290 65 410 65H690M200 285C300 285 290 175 410 175H690M200 285H690M200 285C300 285 290 395 410 395H690M200 285C300 285 290 505 410 505H690"/></g>
         <g class="track-energy"><path d="M40 285H200C300 285 290 65 410 65H690M200 285C300 285 290 175 410 175H690M200 285H690M200 285C300 285 290 395 410 395H690M200 285C300 285 290 505 410 505H690"/></g>
         <circle cx="200" cy="285" r="12" class="node"/>
-        <g class="branch-label"><text x="425" y="48">MOST LOVED?</text><text x="425" y="158">MOST ACCLAIMED?</text><text x="425" y="268">MOST AWARDED?</text><text x="425" y="378">MOST SUCCESSFUL?</text><text x="425" y="488">MOST INFLUENTIAL?</text></g>
+        <g class="branch-label"><text x="425" y="48">Audience response</text><text x="425" y="158">Critical reception</text><text x="425" y="268">Awards</text><text x="425" y="378">Box-office performance</text><text x="425" y="488">Cultural recognition</text></g>
         <g class="terminal"><circle cx="690" cy="65" r="5"/><circle cx="690" cy="175" r="5"/><circle cx="690" cy="285" r="5"/><circle cx="690" cy="395" r="5"/><circle cx="690" cy="505" r="5"/></g>
       </svg>
     </section>
 
     <section class="slide journey" data-title="Our research journey" data-speaker="1" data-section="Introduction" aria-labelledby="title-3">
       <p class="eyebrow">OUR RESEARCH JOURNEY</p><h2 id="title-3">A clearer route<br>through film history</h2>
-      <p class="journey-thesis">We propose a transparent ranking<br>that combines multiple sources, then<br>refines the selection for diversity.</p>
+      <p class="team-roster"><strong>Group 19</strong>Hugo Royuela Rodríguez <i>/</i> Ignacio Del Río Gomez <i>/</i> Clara Laguna Luquero <i>/</i> David Heredero Martínez</p>
+      <p class="journey-thesis">We propose a transparent framework<br>that combines five criteria and refines<br>the selection for diversity.</p>
       <div class="route-map">
         <svg viewBox="0 0 1420 240" aria-hidden="true"><path class="track-bed" d="M0 140H1420"/><path class="track-core" d="M0 140H1420"/><path class="track-energy" d="M0 140H1420"/><g class="route-stations"><circle cx="120" cy="140" r="14"/><circle cx="635" cy="140" r="14"/><circle cx="1140" cy="140" r="14"/></g><path d="M1140 140H1418" class="cyan-route"/></svg>
         <div class="destination d1"><span>01 / EXPLORE</span><h3>Background<br>& research gaps</h3></div>
@@ -212,11 +211,12 @@
 
     <section class="slide recap" data-title="Bringing everything together" data-speaker="4" data-section="Conclusion" aria-labelledby="title-12">
       <p class="eyebrow">CONCLUSION</p><h2 id="title-12">Connecting the evidence<br>behind a Top 10</h2>
-      <div class="recap-lines"><svg viewBox="0 0 1420 350" aria-hidden="true"><path class="track-bed" d="M50 30V300Q50 330 80 330H1420"/><path class="track-core" d="M50 30V300Q50 330 80 330H1420"/><path class="track-energy" d="M50 30V300Q50 330 80 330H1420"/><g class="route-stations"><circle cx="50" cy="45" r="10"/><circle cx="50" cy="150" r="10"/><circle cx="50" cy="255" r="10"/></g></svg><div><span>01 / BACKGROUND</span><h3>Existing sources reveal different aspects of film.</h3></div><div><span>02 / INNOVATION</span><h3>A unified framework connects five criteria.</h3></div><div><span>03 / DESCRIPTION</span><h3>Two phases aim for a more balanced, transparent ranking.</h3></div></div>
+      <div class="recap-lines"><svg viewBox="0 0 1420 350" aria-hidden="true"><path class="track-bed" d="M50 30V300Q50 330 80 330H1420"/><path class="track-core" d="M50 30V300Q50 330 80 330H1420"/><path class="track-energy" d="M50 30V300Q50 330 80 330H1420"/><g class="route-stations"><circle class="recap-node-1" cx="50" cy="45" r="10"/><circle class="recap-node-2" cx="50" cy="150" r="10"/><circle class="recap-node-3" cx="50" cy="255" r="10"/></g></svg><div class="recap-station speaker-focus" tabindex="0" role="button" aria-pressed="false" data-focus="1" data-focus-label="Background"><span>01 / BACKGROUND</span><h3>Evidence captures different aspects of cinema and has uneven coverage</h3></div><div class="recap-station speaker-focus" tabindex="0" role="button" aria-pressed="false" data-focus="2" data-focus-label="Innovation"><span>02 / INNOVATION</span><h3>We propose a documented framework combining five criteria</h3></div><div class="recap-station speaker-focus" tabindex="0" role="button" aria-pressed="false" data-focus="3" data-focus-label="Description"><span>03 / DESCRIPTION</span><h3>Two phases estimate scores and refine representation</h3></div></div>
     </section>
 
     <section class="slide closing" data-title="The final diamond" data-speaker="4" data-section="Conclusion" aria-labelledby="title-13">
-      <div class="closing-copy"><h2 id="title-13">What is the greatest<br>movie of all time<br><em>for you?</em></h2></div>
+      <div class="closing-copy"><h2 id="title-13">Which film would<br>you smuggle<br><em>into space?</em></h2></div>
+      <svg class="mission-record" viewBox="0 0 120 120" role="img" aria-label="An original stylised Golden Record recalls Voyager and the imagined film mission."><use href="#golden-record"/></svg>
       <svg class="final-gem" viewBox="0 0 600 620" role="img" aria-label="A refined faceted diamond, representing the research objective rather than a winning film.">
         <defs><linearGradient id="facet-one" x2="1" y2="1"><stop stop-color="#b9d7cc" stop-opacity=".68"/><stop offset="1" stop-color="#517975" stop-opacity=".12"/></linearGradient><linearGradient id="facet-two" x2="0" y2="1"><stop stop-color="#c4d6b9" stop-opacity=".14"/><stop offset="1" stop-color="#bde2d5" stop-opacity=".5"/></linearGradient></defs>
         <g class="gem-construction" fill="none" stroke="#8dbab0" stroke-opacity=".13"><circle cx="310" cy="280" r="240"/><path d="M0 280H600M310 0V620M65 105H555M65 455H555M135 0V620M485 0V620"/><path d="M65 105 310 560 555 105"/></g>
@@ -235,6 +235,7 @@
         <use href="#gem" x="683" y="133" width="54" height="51" class="end-diamond"/>
       </svg>
       <p class="end-credit">GROUP 19 <span>/</span> EPAC</p>
+      <p class="ai-design-credit">AI-assisted design, adapted and edited by the authors</p>
     </section>
 
     <section class="slide references" data-title="References: evidence sources" data-speaker="Appendix" data-section="References" aria-labelledby="title-14">
@@ -250,14 +251,15 @@
       </div></div><p class="citation">References follow the sources cited in the Group 19 Speech Preparation Outline. Press R to return to the presentation.</p>
     </section>
 
-    <section class="slide references" data-title="References: methods and readiness" data-speaker="Appendix" data-section="References" aria-labelledby="title-15">
-      <p class="eyebrow">REFERENCE LIBRARY / 02</p><h2 id="title-15">Methods & readiness</h2>
+    <section class="slide references" data-title="References: methods and context" data-speaker="Appendix" data-section="References" aria-labelledby="title-15">
+      <p class="eyebrow">REFERENCE LIBRARY / 02</p><h2 id="title-15">Methods & context</h2>
       <div class="method-reference-list">
         <article><span>[7]</span><p><strong>Ziegler, C.-N., McNee, S. M., Konstan, J. A., &amp; Lausen, G. (2005).</strong> Improving recommendation lists through topic diversification. <i>Proceedings of the 14th International Conference on World Wide Web</i>, 22–32. <a href="https://doi.org/10.1145/1060745.1060754" target="_blank" rel="noopener noreferrer">doi:10.1145/1060745.1060754 ↗</a></p></article>
         <article><span>[8]</span><p><strong>IMDb (n.d.).</strong> IMDb Non-Commercial Datasets. <a href="https://data.imdb.com/non-commercial-datasets/" target="_blank" rel="noopener noreferrer">data.imdb.com/non-commercial-datasets ↗</a></p></article>
         <article><span>[9]</span><p><strong>European Commission (n.d.).</strong> Technology Readiness Levels. European Innovation Council programme guidance. <a href="https://eic.ec.europa.eu/programme-finder-13_en" target="_blank" rel="noopener noreferrer">European Commission ↗</a></p></article>
         <article><span>[10]</span><p><strong>Wang, Q., You, Y., &amp; Wang, S. (2024).</strong> Personalized movie recommendations based on probabilistic linguistic sentiment and integrated DEMATEL-TODIM methods. <i>Scientific Reports, 14</i>, 19871. <a href="https://doi.org/10.1038/s41598-024-70203-1" target="_blank" rel="noopener noreferrer">doi:10.1038/s41598-024-70203-1 ↗</a></p></article>
         <article><span>[11]</span><p><strong>Singh, A., &amp; Joachims, T. (2018).</strong> Fairness of exposure in rankings. <i>Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining.</i> <a href="https://doi.org/10.1145/3219819.3220088" target="_blank" rel="noopener noreferrer">doi:10.1145/3219819.3220088 ↗</a></p></article>
+        <article class="nasa-references"><span>[12]<br>[13]</span><p><strong>NASA (n.d.).</strong> Golden Record contents. <i>NASA Science.</i> <a href="https://science.nasa.gov/mission/voyager/golden-record-contents/" target="_blank" rel="noopener noreferrer">Golden Record ↗</a><br><strong>NASA (n.d.).</strong> Voyager: Mission overview. <i>NASA Science.</i> <a href="https://science.nasa.gov/mission/voyager/mission-overview/" target="_blank" rel="noopener noreferrer">Mission overview ↗</a></p></article>
       </div><div class="production-credit compact-credit"><p>AI assistance for code and editing: OpenAI Codex. Research proposal and oral presentation: Group 19.</p></div>
     </section>
 
@@ -316,7 +318,7 @@
   <footer class="deck-footer">
     <div class="journey-progress"><div id="progress-track" aria-label="Slide navigation">
       <span class="rail-line" aria-hidden="true"></span>
-      <button class="station chapter-station" data-go="0" aria-label="Slide 1: The question"></button><button class="station" data-go="1" aria-label="Slide 2: Why is this so difficult?"></button><button class="station" data-go="2" aria-label="Slide 3: Our research journey"></button><button class="station chapter-station" data-go="3" aria-label="Slide 4: Existing evidence"></button><button class="station" data-go="4" aria-label="Slide 5: Previous research"></button><button class="station" data-go="5" aria-label="Slide 6: Research gap"></button><button class="station chapter-station" data-go="6" aria-label="Slide 7: The Diamond Mine system"></button><button class="station" data-go="7" aria-label="Slide 8: Phase 1: Bayesian Weighted Rating"></button><button class="station" data-go="8" aria-label="Slide 9: Phase 2: Diversity Optimization"></button><button class="station" data-go="9" aria-label="Slide 10: Applications and maturity"></button><button class="station chapter-station" data-go="10" aria-label="Slide 11: Bringing everything together"></button><button class="station" data-go="11" aria-label="Slide 12: The final diamond"></button><button class="station" data-go="12" aria-label="Slide 13: Thank you"></button>
+      <button class="station chapter-station" data-go="0" aria-label="Slide 1: Voyager and the Golden Record"></button><button class="station" data-go="1" aria-label="Slide 2: Ten films: how do we choose?"></button><button class="station" data-go="2" aria-label="Slide 3: Our research journey"></button><button class="station chapter-station" data-go="3" aria-label="Slide 4: Existing evidence"></button><button class="station" data-go="4" aria-label="Slide 5: Previous research"></button><button class="station" data-go="5" aria-label="Slide 6: Research gap"></button><button class="station chapter-station" data-go="6" aria-label="Slide 7: The Diamond Mine system"></button><button class="station" data-go="7" aria-label="Slide 8: Phase 1: Bayesian Weighted Rating"></button><button class="station" data-go="8" aria-label="Slide 9: Phase 2: Diversity Optimization"></button><button class="station" data-go="9" aria-label="Slide 10: Applications and maturity"></button><button class="station chapter-station" data-go="10" aria-label="Slide 11: Bringing everything together"></button><button class="station" data-go="11" aria-label="Slide 12: The final diamond"></button><button class="station" data-go="12" aria-label="Slide 13: Thank you"></button>
       <svg id="progress-cart" viewBox="0 0 42 32" aria-hidden="true"><use href="#cart"/></svg>
     </div><div class="progress-labels" aria-hidden="true"><span>INTRODUCTION</span><span>BACKGROUND</span><span>INNOVATION & DESCRIPTION</span><span>CONCLUSION</span></div></div>
     <div class="deck-controls"><div class="utility-controls"><button id="detail-toggle" title="Show slide detail (E)" aria-label="Show slide detail" aria-expanded="false" hidden>E</button><button id="overview-toggle" title="Slide overview (O)" aria-label="Open slide overview"><svg><use href="#grid-icon"/></svg></button><button id="notes-toggle" title="Speaker notes (N)" aria-label="Open speaker notes">N</button><button id="references-toggle" title="References (R)" aria-label="Toggle references">R</button><button id="fullscreen-toggle" title="Fullscreen (F)" aria-label="Toggle fullscreen"><svg><use href="#fullscreen-icon"/></svg></button><button id="help-toggle" title="Keyboard shortcuts (?)" aria-label="Show keyboard shortcuts">?</button></div><span class="control-divider"></span><button id="prev-slide" title="Previous slide (←)" aria-label="Previous slide"><svg><use href="#arrow-left"/></svg></button><span id="slide-count">01 / 13</span><button id="next-slide" title="Next slide (→)" aria-label="Next slide"><svg><use href="#arrow-right"/></svg></button></div>

@@ -5,7 +5,7 @@ const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 
 const root = path.resolve(__dirname, '..');
-const output = path.join(__dirname, 'screenshots');
+const output = process.env.DECK_QA_SCREENSHOTS ? path.resolve(root, process.env.DECK_QA_SCREENSHOTS) : path.join(__dirname, 'screenshots');
 const MAIN_SLIDES = 13;
 const DATASET_SLIDE = MAIN_SLIDES + 3;
 const ARCHITECTURE_SLIDE = MAIN_SLIDES + 4;
@@ -115,6 +115,79 @@ const check = (condition, label, detail) => {
     await go(DATASET_SLIDE);
     check((await page.locator('.dataset-scope').innerText()).includes('1910–2024'), 'Dataset appendix uses the agreed RP date scope');
 
+    await go(1);
+    check((await page.locator('#title-1').innerText()).replace(/\s+/g,' ') === 'The Golden Record' && (await page.locator('.voyager-opening .eyebrow').innerText()).includes('1977') && await page.locator('.record-hero').isVisible(), 'The opening uses the historical Golden Record hook and original vector');
+    await go(2);
+    const premise = await page.locator('.debate-title').innerText();
+    check(premise.includes('A HYPOTHETICAL MISSION') && premise.includes('10') && premise.includes('How do we choose?') && await page.locator('.branch-label text').count() === 5, 'The second slide explicitly imagines ten films and five selection criteria');
+    await go(3);
+    const roster = await page.locator('.team-roster').innerText();
+    const names = ['Hugo Royuela Rodríguez','Ignacio Del Río Gomez','Clara Laguna Luquero','David Heredero Martínez'];
+    check(names.every((name,index) => roster.includes(name) && (index === 0 || roster.indexOf(names[index-1]) < roster.indexOf(name))) && await page.locator('.destination').count() === 3, 'The confirmed team order and three-section index are preserved');
+    await go(13);
+    check(await page.locator('.ai-design-credit').innerText() === 'AI-assisted design, adapted and edited by the authors' && await page.locator('.ai-design-credit').isVisible() && Number(await page.locator('.ai-design-credit').evaluate((el) => parseFloat(getComputedStyle(el).fontSize))) >= 16, 'The final main slide carries the exact discreet, readable AI design credit');
+    await go(11); await key('1');
+    check(await page.locator('.recap-station[data-focus="1"]').getAttribute('aria-pressed') === 'true', 'Key 1 highlights the Background recap station');
+    await key('3');
+    check(await page.locator('.recap-station.is-focused').count() === 1 && await page.locator('.recap-station[data-focus="3"]').getAttribute('aria-pressed') === 'true', 'Recap highlighting follows the speaker and selects one station at a time');
+    await page.waitForTimeout(220);
+    const stationColours = await page.locator('.recap-lines').evaluate((recap) => ({ node: getComputedStyle(recap.querySelector('.recap-node-3')).fill, text: getComputedStyle(recap.querySelector('[data-focus="3"] h3')).color, unselected: getComputedStyle(recap.querySelector('.recap-node-1')).fill }));
+    check(stationColours.node === stationColours.text && stationColours.node !== stationColours.unselected, 'The highlighted statement and its rail station share the mineral accent', stationColours);
+    await page.locator('.recap-station[data-focus="2"]').click();
+    check(await page.locator('.recap-station[data-focus="2"]').getAttribute('aria-pressed') === 'true', 'A mouse click highlights the Innovation recap station');
+    await page.locator('.recap-station[data-focus="3"]').focus();
+    await page.keyboard.press('Space');
+    check((await state()).slide === 11 && await page.locator('.recap-station[data-focus="3"]').getAttribute('aria-pressed') === 'true', 'Space activates a focused recap station without navigating');
+    await page.keyboard.press('Enter');
+    check((await state()).slide === 11, 'Enter activates a recap station without advancing');
+    await key('Escape');
+    check(await page.locator('.recap-station.is-focused').count() === 0 && await page.locator('.recap-station[aria-pressed="true"]').count() === 0, 'Escape clears visual and accessible recap selection');
+    await key('2'); await key('ArrowRight'); await key('ArrowLeft');
+    check((await state()).slide === 11 && await page.locator('.recap-station.is-focused').count() === 0, 'Backward navigation restores the recap without a stale highlight');
+    await go(4); await key('2');
+    check(await page.locator('.source-row[data-focus="2"]').evaluate((row) => row.classList.contains('is-focused')), 'Existing source highlighting remains available');
+    await go(12);
+    check((await page.locator('#title-13').innerText()).replace(/\s+/g,' ').trim() === 'Which film would you smuggle into space?' && await page.locator('.mission-record').isVisible() && await page.locator('.final-gem').isVisible(), 'The closing question returns to the imagined mission beside the diamond and one record');
+    await go(MAIN_SLIDES + 2);
+    check(await page.locator('.slide.is-active a[href="https://science.nasa.gov/mission/voyager/golden-record-contents/"]').count() === 1, 'The NASA source used by the RP is linked in the existing reference appendix');
+    check(await page.locator('.slide.is-active a[href="https://science.nasa.gov/mission/voyager/mission-overview/"]').count() === 1, 'The launch-date source is linked without duplicating the Golden Record reference');
+
+    await go(6); await go(7);
+    const fade = await page.locator('.slide.is-active .track-energy').evaluate((track) => {
+      const animation = track.getAnimations()[0];
+      if (!animation) return null;
+      window.__railUnderTest = animation;
+      animation.pause();
+      animation.currentTime = 1500;
+      const middle = { opacity: Number(getComputedStyle(track).opacity), offset: parseFloat(getComputedStyle(track).strokeDashoffset) };
+      animation.currentTime = 3300;
+      const late = Number(getComputedStyle(track).opacity);
+      animation.currentTime = 3700;
+      return { duration: animation.effect.getTiming().duration, iterations: animation.effect.getTiming().iterations, middle, late, ended: Number(getComputedStyle(track).opacity) };
+    });
+    check(fade && fade.duration === 3600 && fade.iterations === 1 && fade.middle.opacity > .7 && fade.late > 0 && fade.late < fade.middle.opacity && fade.ended === 0, 'Rail accent travels for about three seconds, fades smoothly and finishes invisible', fade);
+    await go(3);
+    const backward = await page.locator('.slide.is-active .track-energy').evaluate((track) => {
+      const animation=track.getAnimations()[0];animation.pause();animation.currentTime=1500;
+      const result={ opacity:Number(getComputedStyle(track).opacity), offset:parseFloat(getComputedStyle(track).strokeDashoffset) };
+      animation.currentTime=3300;result.late=Number(getComputedStyle(track).opacity);return result;
+    });
+    check(fade && fade.middle.offset < 0 && backward.offset > 0 && Math.abs(fade.late-backward.late) < .01, 'Backward navigation reverses rail travel without reversing the fade', backward);
+    check(await page.evaluate(() => window.__railUnderTest.playState === 'idle'), 'Leaving a slide cancels its previous rail animation');
+    await go(7); await go(3); await go(7);
+    check(await page.evaluate(() => [...document.querySelectorAll('.track-energy')].flatMap((track) => track.getAnimations()).filter((animation) => animation.playState !== 'finished').length === 1), 'Rapid navigation leaves only the current slide rail burst running');
+    await go(8);
+    await page.locator('.slide.is-active .track-energy').first().evaluate((track) => { window.__railUnderTest=track.getAnimations()[0]; });
+    await key('e');
+    await page.evaluate(() => { window.__railUnderTest.pause();window.__railUnderTest.currentTime=3700; });
+    await key('Escape');
+    check(await page.locator('.slide.is-active .track-energy').first().evaluate((track) => Number(getComputedStyle(track).opacity) === 0), 'Returning from Parasite after the rail burst does not restart the accent');
+    await go(9); await go(8);
+    check(await page.locator('.slide.is-active .track-energy').first().evaluate((track) => track.getAnimations().some((animation) => animation.effect.getTiming().duration === 3600)), 'Re-entering a slide starts a fresh finite rail burst');
+    await page.emulateMedia({ reducedMotion: 'reduce' });await page.waitForTimeout(50);
+    check(await page.evaluate(() => [...document.querySelectorAll('.track-energy')].every((track) => track.getAnimations().length === 0 && Number(getComputedStyle(track).opacity) === 0)), 'Reduced motion cancels rail animations while the underlying tracks remain');
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+
     await defocus();
     for (const [width, height] of [[1920,1080], [1280,720]]) {
       await page.setViewportSize({ width, height });
@@ -135,6 +208,11 @@ const check = (condition, label, detail) => {
         check(layout.scroll.width <= width && layout.scroll.height <= height, `${width}×${height} slide ${slide}: no page overflow`);
         check(layout.outside.length === 0, `${width}×${height} slide ${slide}: text stays on canvas`, layout.outside);
         await page.screenshot({ path: path.join(output, `${width}x${height}-${String(slide).padStart(2,'0')}.png`) });
+        if (slide === 11) {
+          await key('2'); await page.waitForTimeout(220);
+          await page.screenshot({ path: path.join(output, `${width}x${height}-11-highlight.png`) });
+          await key('Escape');
+        }
         if ([8,10].includes(slide)) {
           await key('e'); await page.waitForTimeout(300);
           const detailLayout = await page.locator('.slide.is-active [data-detail-panel]').evaluate((panel) => {
@@ -201,11 +279,24 @@ const check = (condition, label, detail) => {
     check(!(await clapperHas('is-active')), 'Changing to reduced motion cancels clapper');
     await clapperPage.keyboard.press('c');
     check(!(await clapperHas('is-active')), 'Reduced motion skips clapper replay');
+    await clapperPage.keyboard.press('End');
+    await clapperPage.keyboard.press('ArrowLeft');
+    await clapperPage.clock.fastForward(180000);
+    check((await clapperState()).slide === 12, 'The final question waits for the speaker without automatic advance');
+    await clapperPage.keyboard.press('ArrowRight');
+    check((await clapperState()).slide === 13, 'The speaker advances from the final question to Thank you');
+    await clapperPage.keyboard.press('r');
+    await clapperPage.keyboard.press('r');
+    check((await clapperState()).slide === 13, 'References remain accessible during Q&A and return to Thank you');
+    await clapperPage.keyboard.press('ArrowLeft');
+    await clapperPage.keyboard.press('ArrowLeft');
+    await clapperPage.keyboard.press('3');
+    check(await clapperPage.locator('.recap-station[data-focus="3"]').getAttribute('aria-pressed') === 'true', 'Recap highlighting works when returning in reduced-motion mode');
     await clapperPage.close();
     check(report.consoleErrors.length === 0 && report.pageErrors.length === 0, 'No console or JavaScript errors', [...report.consoleErrors, ...report.pageErrors]);
     check(report.externalRequests.length === 0, 'Deck makes no network requests', report.externalRequests);
     fs.writeFileSync(path.join(__dirname, 'report.json'), JSON.stringify(report, null, 2));
-    console.log(JSON.stringify({ passed: report.checks.filter((entry) => entry.pass).length, failed: report.checks.filter((entry) => !entry.pass), screenshots: TOTAL_SLIDES * 2 + 4, report: path.join(__dirname, 'report.json') }, null, 2));
+    console.log(JSON.stringify({ passed: report.checks.filter((entry) => entry.pass).length, failed: report.checks.filter((entry) => !entry.pass), screenshots: TOTAL_SLIDES * 2 + 6, report: path.join(__dirname, 'report.json') }, null, 2));
     if (report.checks.some((entry) => !entry.pass)) process.exitCode = 1;
   } finally { await browser.close(); }
 })().catch((error) => { console.error(error); process.exitCode = 1; });

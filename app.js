@@ -33,10 +33,33 @@
   let previousFocus = null;
   let resizeFrame = 0;
   let clapperTimers = [];
+  let railAnimations = [];
+  let railSlide = null;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   const clamp = (value, minimum, maximum) => Math.max(minimum, Math.min(maximum, value));
   const number = (index) => String(index + 1).padStart(2, '0');
+
+  function cancelRailMotion() {
+    railAnimations.forEach((animation) => animation.cancel());
+    railAnimations = [];
+  }
+
+  function playRailMotion(slide, backward, delay = 0) {
+    if (railSlide === slide) return;
+    cancelRailMotion();
+    railSlide = slide;
+    if (reducedMotion.matches) return;
+    // Hold the moving accent for about three seconds, then fade over 600ms.
+    // Document-timeline animations keep their age while slide details hide them.
+    const distance = backward ? 784.8 : -784.8;
+    railAnimations = Array.from(slide.querySelectorAll('.track-energy'), (track) => track.animate([
+      { opacity: 0, strokeDashoffset: '0px', offset: 0 },
+      { opacity: .72, strokeDashoffset: `${distance * .05}px`, offset: .05 },
+      { opacity: .72, strokeDashoffset: `${distance * (5 / 6)}px`, offset: 5 / 6 },
+      { opacity: 0, strokeDashoffset: `${distance}px`, offset: 1 },
+    ], { duration: 3600, delay, iterations: 1, easing: 'linear', fill: 'none' }));
+  }
 
   function dismissClapperboard() {
     clapperTimers.forEach((timer) => window.clearTimeout(timer));
@@ -79,7 +102,10 @@
   }
 
   function clearSpeakerFocus() {
-    speakerFocusItems.forEach((item) => item.classList.remove('is-focused'));
+    speakerFocusItems.forEach((item) => {
+      item.classList.remove('is-focused');
+      if (item.hasAttribute('aria-pressed')) item.setAttribute('aria-pressed', 'false');
+    });
   }
 
   function setSlideDetail(slide, expanded) {
@@ -125,6 +151,7 @@
     if (!item || !item.closest('.slide.is-active')) return false;
     clearSpeakerFocus();
     item.classList.add('is-focused');
+    if (item.hasAttribute('aria-pressed')) item.setAttribute('aria-pressed', 'true');
     announce(`Highlight: ${item.dataset.focusLabel || item.textContent.trim()}`);
     return true;
   }
@@ -198,7 +225,9 @@
     document.dispatchEvent(new CustomEvent('slidechange', { detail: { index: next, previous: old, slide: slides[next] } }));
     const leavingOpening = old === 0 && next === 1;
     const returningToOpening = next === 0 && old > 0 && old < MAIN_SLIDE_COUNT;
-    if (!options.skipClapper && (leavingOpening || returningToOpening)) playClapperboard(next + 1);
+    const clapperTransition = !options.skipClapper && !reducedMotion.matches && (leavingOpening || returningToOpening);
+    if (clapperTransition) playClapperboard(next + 1);
+    playRailMotion(slides[next], next < old, clapperTransition ? 1100 : 0);
   }
 
   function closeDialog() {
@@ -285,7 +314,7 @@
       ['O', 'Open the mine map'],
       ['N', 'Open presenter notes'],
       ['E', 'Show / hide the example on slide 8 or validation on slide 10'],
-      ['1–5', 'Highlight a source, study or challenge on slides 4–6'],
+      ['1–5', 'Highlight on slides 4–6; use 1–3 for the recap on slide 11'],
       ['R', 'References / return to your slide'],
       ['D', 'Dataset plan / return to your slide'],
       ['A', 'Architecture diagram / return to your slide'],
@@ -429,7 +458,10 @@
     fitStage();
   });
   reducedMotion.addEventListener('change', () => {
-    if (reducedMotion.matches) dismissClapperboard();
+    if (reducedMotion.matches) {
+      dismissClapperboard();
+      cancelRailMotion();
+    }
   });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) dismissClapperboard();

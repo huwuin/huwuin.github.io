@@ -25,14 +25,31 @@ h2 { font-size: 71px; }
 .header-context { font-size: 15px; }
 .hero-copy { top: 180px; }
 .hero-sub { font-size: 28px; }
+.voyager-opening .hero-copy { top: 230px; }
+.voyager-opening .hero-copy h1 { font-size: 112px; }
+.voyager-opening .hero-sub { margin-top: 32px; font-size: 33px; }
+.voyager-opening .eyebrow sup { font-size: 15px; letter-spacing: 0; margin-left: 10px; }
+.record-hero { position: absolute; left: 870px; top: 125px; width: 640px; height: 640px; fill: none; stroke: var(--copper); stroke-width: .5px; }
+.record-credit { position: absolute; left: 90px; bottom: 145px; font-size: 18px; color: var(--muted); }
+.record-credit span { color: var(--copper); margin: 0 10px; }
 .opening-caption { display: none; }
 .mine-scene { opacity: .92; }
-.debate-title { top: 255px; }
+.debate-title { top: 215px; }
+.debate-title .film-limit { font-size: 176px; line-height: 1.1; color: var(--mineral); letter-spacing: -7px; margin-right: 12px; }
+.selection-question { margin-top: 32px; font-size: 42px; line-height: 1.25; }
 .debate-title .body-copy { font-size: 30px; }
-.branch-label { font-size: 22px; letter-spacing: 1.6px; }
+.mission-premise { display: flex; align-items: center; gap: 24px; margin-top: 40px; max-width: 620px; }
+.mission-premise>svg { flex: 0 0 100px; width: 100px; height: 100px; fill: none; stroke: var(--copper); stroke-width: 2.4px; }
+.mission-source { font-size: 24px; line-height: 1.35; color: var(--copper); }
+.mission-source sup { font-size: 15px; }
+.mission-premise .body-copy { margin-top: 12px; line-height: 1.35; }
+.branch-label { font-size: 26px; letter-spacing: .2px; }
 .bottom-statement { font-size: 31px; bottom: 158px; }
 .journey-thesis { font-size: 29px; left: 845px; top: 194px; }
 .journey .route-map { top: 450px; }
+.team-roster { position: absolute; left: 90px; right: 90px; top: 360px; font-size: 24px; line-height: 1.35; color: var(--muted); }
+.team-roster strong { display: block; font-size: 19px; color: var(--copper); font-weight: 500; margin-bottom: 7px; }
+.team-roster i { font-style: normal; color: var(--copper-dim); margin: 0 13px; }
 .destination>span { font-size: 17px; }
 .destination h3 { font-size: 34px; }
 .destination p { font-size: 25px; top: 174px; }
@@ -221,6 +238,11 @@ h2 { font-size: 71px; }
 .recap-lines h3 { font-size: 32px; }
 .recap-lines span { font-size: 17px; }
 .recap h2 { font-size: 74px; }
+.recap-station.is-focused h3 { color: var(--mineral); }
+.recap-lines .route-stations circle { transition: fill .18s ease,stroke .18s ease; }
+.recap-lines:has([data-focus="1"].is-focused) .recap-node-1,
+.recap-lines:has([data-focus="2"].is-focused) .recap-node-2,
+.recap-lines:has([data-focus="3"].is-focused) .recap-node-3 { fill: var(--mineral); stroke: var(--mineral); }
 
 /* The closing rail leads to the same light that opened the journey. */
 .closing-copy { top: 260px; }
@@ -229,6 +251,7 @@ h2 { font-size: 71px; }
 .return-question { font-size: 27px; }
 .qa-label { font-size: 17px; }
 .final-gem { z-index: 1; top: 120px; }
+.mission-record { position: absolute; left: 1370px; top: 120px; width: 130px; height: 130px; fill: none; stroke: var(--copper); stroke-width: 2.4px; opacity: .85; z-index: 0; }
 .exit-rail { position: absolute; left: 920px; top: 654px; width: 580px; height: 205px; fill: none; stroke: var(--copper); stroke-width: 1.1px; opacity: .38; z-index: 0; }
 
 /* A final title card, with both routes meeting at one small diamond. */
@@ -240,13 +263,11 @@ h2 { font-size: 71px; }
 .end-diamond { fill: var(--ink); stroke: var(--mineral); stroke-width: 2px; }
 .end-credit { position: absolute; left: 90px; bottom: 130px; color: var(--muted); font-size: 15px; letter-spacing: 2.5px; }
 .end-credit span { margin: 0 12px; color: var(--copper); }
+.ai-design-credit { position: absolute; right: 90px; bottom: 130px; font-size: 18px; line-height: 1.4; color: var(--muted); }
 .thank-you.is-active .thank-you-copy { animation: reveal-in .6s var(--ease) both; }
 
-/* Evidence keeps moving along the rails while its slide is visible. */
+/* Navigation drives one brief highlight; the underlying rails stay visible. */
 .track-energy { fill: none; stroke: #f2cda2; stroke-width: 2.4px; stroke-dasharray: 28 190; stroke-dashoffset: 0; opacity: 0; pointer-events: none; }
-.is-active .track-energy { animation: rail-travel 2s linear infinite; opacity: .72; }
-#stage[data-direction="backward"] .is-active .track-energy { animation-direction: reverse; }
-@keyframes rail-travel { to { stroke-dashoffset: -436; } }
 
 /* Keep navigation present but let the audience concentrate on the slide. */
 .deck-footer { bottom: 21px; height: 68px; }
@@ -276,6 +297,7 @@ h2 { font-size: 71px; }
 .method-reference-list { position: absolute; left: 90px; right: 90px; top: 280px; }
 .method-reference-list article { position: relative; padding-left: 48px; margin-bottom: 21px; }
 .method-reference-list article>span { position: absolute; left: 0; top: 3px; font-size: 18px; color: var(--copper); }
+.method-reference-list .nasa-references>span { top: 0; line-height: 31.28px; }
 .method-reference-list p { font-size: 23px; line-height: 1.36; color: var(--muted); }
 .method-reference-list strong { color: var(--paper); font-weight: 500; }
 .method-reference-list a { color: var(--mineral); text-decoration: none; white-space: nowrap; }
@@ -292,7 +314,7 @@ h2 { font-size: 71px; }
 .dataset-scope { position: absolute; left: 90px; bottom: 118px; color: var(--muted); font-size: 25px; line-height: 1.4; }
 .presenter-notes { font-size: 20px; line-height: 1.6; }
 @media (prefers-reduced-motion:reduce) {
-  .track-energy,.is-active .track-energy { animation: none!important; opacity: .35; stroke-dasharray: 5 35; }
+  .track-energy,.is-active .track-energy { animation: none!important; opacity: 0!important; }
 }
 @media print {
   .utility-controls,.exit-rail { display: none; }
